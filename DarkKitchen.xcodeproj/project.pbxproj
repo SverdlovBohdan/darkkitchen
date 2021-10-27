@@ -7,23 +7,97 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E201D572729D7630093DFF7 /* CombineInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E201D562729D7630093DFF7 /* CombineInteractor.swift */; };
+		0E201D592729DBE00093DFF7 /* OrdersProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E201D582729DBE00093DFF7 /* OrdersProvider.swift */; };
+		0E201D5B2729DC080093DFF7 /* OrderSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E201D5A2729DC080093DFF7 /* OrderSender.swift */; };
+		0E201D5D2729DCD80093DFF7 /* OrdersState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E201D5C2729DCD80093DFF7 /* OrdersState.swift */; };
+		0E201D5F2729E0130093DFF7 /* Pushable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E201D5E2729E0130093DFF7 /* Pushable.swift */; };
+		0E201D612729E6AF0093DFF7 /* Pushable+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E201D602729E6AF0093DFF7 /* Pushable+Equatable.swift */; };
 		0E3B540726F7A4E300DE526C /* DarkKitchenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3B540626F7A4E300DE526C /* DarkKitchenApp.swift */; };
 		0E3B540926F7A4E300DE526C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3B540826F7A4E300DE526C /* ContentView.swift */; };
 		0E3B540B26F7A4E700DE526C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3B540A26F7A4E700DE526C /* Assets.xcassets */; };
 		0E3B540E26F7A4E700DE526C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3B540D26F7A4E700DE526C /* Preview Assets.xcassets */; };
+		0E44073D272347C700632B5F /* MenuState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E44073C272347C700632B5F /* MenuState.swift */; };
+		0E4407462723532500632B5F /* MenuTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4407452723532500632B5F /* MenuTest.swift */; };
+		0E44074E2723538200632B5F /* MenuRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E44074D2723538200632B5F /* MenuRepositoryStub.swift */; };
+		0E440750272358A000632B5F /* RepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E44074F272358A000632B5F /* RepositoryError.swift */; };
+		0E4E61FB27241AA000E11DDC /* Loadable+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E61FA27241AA000E11DDC /* Loadable+Equatable.swift */; };
+		0E4E61FD272420F500E11DDC /* MenuProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E61FC272420F500E11DDC /* MenuProvider.swift */; };
+		0E8B135526FA4E10006D36D5 /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B135426FA4E10006D36D5 /* MenuItems.swift */; };
+		0E8B135726FA4E34006D36D5 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B135626FA4E34006D36D5 /* Cart.swift */; };
+		0E8B135926FA4E46006D36D5 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B135826FA4E45006D36D5 /* Order.swift */; };
+		0E8B135B26FA4E53006D36D5 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B135A26FA4E53006D36D5 /* Profile.swift */; };
+		0E8B135D26FA4E62006D36D5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B135C26FA4E62006D36D5 /* Item.swift */; };
+		0E8B135F26FA4F0F006D36D5 /* MenuInteractor+MenuProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B135E26FA4F0F006D36D5 /* MenuInteractor+MenuProvider.swift */; };
+		0E8B136126FA53CE006D36D5 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B136026FA53CE006D36D5 /* AppState.swift */; };
+		0E8B136326FA5467006D36D5 /* CartInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B136226FA5467006D36D5 /* CartInteractor.swift */; };
+		0E8B136526FA552B006D36D5 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B136426FA552B006D36D5 /* ProfileInteractor.swift */; };
+		0E8B136726FA554E006D36D5 /* OrderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B136626FA554E006D36D5 /* OrderInteractor.swift */; };
+		0E8B136926FA560F006D36D5 /* MenuRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B136826FA560F006D36D5 /* MenuRepository.swift */; };
+		0E8B136B26FA5675006D36D5 /* OrderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B136A26FA5675006D36D5 /* OrderRepository.swift */; };
+		0E8B136D26FA56F8006D36D5 /* PushOrderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B136C26FA56F8006D36D5 /* PushOrderResult.swift */; };
+		0E8B137826FA5BAA006D36D5 /* Interactors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B137726FA5BAA006D36D5 /* Interactors.swift */; };
+		0ECBDACA271DF039007C9693 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECBDAC9271DF039007C9693 /* Loadable.swift */; };
+		0ECBDACC271DF046007C9693 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECBDACB271DF046007C9693 /* UserData.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0E4407472723532500632B5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E3B53FB26F7A4E300DE526C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E3B540226F7A4E300DE526C;
+			remoteInfo = DarkKitchen;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		0E201D562729D7630093DFF7 /* CombineInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineInteractor.swift; sourceTree = "<group>"; };
+		0E201D582729DBE00093DFF7 /* OrdersProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersProvider.swift; sourceTree = "<group>"; };
+		0E201D5A2729DC080093DFF7 /* OrderSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSender.swift; sourceTree = "<group>"; };
+		0E201D5C2729DCD80093DFF7 /* OrdersState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersState.swift; sourceTree = "<group>"; };
+		0E201D5E2729E0130093DFF7 /* Pushable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pushable.swift; sourceTree = "<group>"; };
+		0E201D602729E6AF0093DFF7 /* Pushable+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pushable+Equatable.swift"; sourceTree = "<group>"; };
 		0E3B540326F7A4E300DE526C /* DarkKitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkKitchen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E3B540626F7A4E300DE526C /* DarkKitchenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkKitchenApp.swift; sourceTree = "<group>"; };
 		0E3B540826F7A4E300DE526C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0E3B540A26F7A4E700DE526C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E3B540D26F7A4E700DE526C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0E3B540F26F7A4E700DE526C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E44073C272347C700632B5F /* MenuState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuState.swift; sourceTree = "<group>"; };
+		0E4407432723532500632B5F /* DarkKitchenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DarkKitchenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E4407452723532500632B5F /* MenuTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTest.swift; sourceTree = "<group>"; };
+		0E44074D2723538200632B5F /* MenuRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRepositoryStub.swift; sourceTree = "<group>"; };
+		0E44074F272358A000632B5F /* RepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryError.swift; sourceTree = "<group>"; };
+		0E4E61FA27241AA000E11DDC /* Loadable+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Loadable+Equatable.swift"; sourceTree = "<group>"; };
+		0E4E61FC272420F500E11DDC /* MenuProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuProvider.swift; sourceTree = "<group>"; };
+		0E8B135426FA4E10006D36D5 /* MenuItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
+		0E8B135626FA4E34006D36D5 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		0E8B135826FA4E45006D36D5 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		0E8B135A26FA4E53006D36D5 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		0E8B135C26FA4E62006D36D5 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		0E8B135E26FA4F0F006D36D5 /* MenuInteractor+MenuProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuInteractor+MenuProvider.swift"; sourceTree = "<group>"; };
+		0E8B136026FA53CE006D36D5 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		0E8B136226FA5467006D36D5 /* CartInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartInteractor.swift; sourceTree = "<group>"; };
+		0E8B136426FA552B006D36D5 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
+		0E8B136626FA554E006D36D5 /* OrderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInteractor.swift; sourceTree = "<group>"; };
+		0E8B136826FA560F006D36D5 /* MenuRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRepository.swift; sourceTree = "<group>"; };
+		0E8B136A26FA5675006D36D5 /* OrderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRepository.swift; sourceTree = "<group>"; };
+		0E8B136C26FA56F8006D36D5 /* PushOrderResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushOrderResult.swift; sourceTree = "<group>"; };
+		0E8B137726FA5BAA006D36D5 /* Interactors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactors.swift; sourceTree = "<group>"; };
+		0ECBDAC9271DF039007C9693 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
+		0ECBDACB271DF046007C9693 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0E3B540026F7A4E300DE526C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E4407402723532500632B5F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,7 +111,9 @@
 			isa = PBXGroup;
 			children = (
 				0E3B540526F7A4E300DE526C /* DarkKitchen */,
+				0E4407442723532500632B5F /* DarkKitchenTests */,
 				0E3B540426F7A4E300DE526C /* Products */,
+				0E3B542426F7B75900DE526C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -45,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				0E3B540326F7A4E300DE526C /* DarkKitchen.app */,
+				0E4407432723532500632B5F /* DarkKitchenTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -52,8 +129,12 @@
 		0E3B540526F7A4E300DE526C /* DarkKitchen */ = {
 			isa = PBXGroup;
 			children = (
+				0E8B135326FA4DD2006D36D5 /* models */,
+				0E8B135226FA4DC8006D36D5 /* environment */,
+				0E8B135126FA4DBC006D36D5 /* business */,
+				0E8B135026FA4DB0006D36D5 /* repositories */,
+				0E3B541926F7A86C00DE526C /* ui */,
 				0E3B540626F7A4E300DE526C /* DarkKitchenApp.swift */,
-				0E3B540826F7A4E300DE526C /* ContentView.swift */,
 				0E3B540A26F7A4E700DE526C /* Assets.xcassets */,
 				0E3B540F26F7A4E700DE526C /* Info.plist */,
 				0E3B540C26F7A4E700DE526C /* Preview Content */,
@@ -67,6 +148,108 @@
 				0E3B540D26F7A4E700DE526C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0E3B541926F7A86C00DE526C /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				0E3B540826F7A4E300DE526C /* ContentView.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		0E3B542426F7B75900DE526C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0E44073E2723481A00632B5F /* action-states */ = {
+			isa = PBXGroup;
+			children = (
+				0ECBDAC9271DF039007C9693 /* Loadable.swift */,
+				0E201D5E2729E0130093DFF7 /* Pushable.swift */,
+				0E44073C272347C700632B5F /* MenuState.swift */,
+				0E201D5C2729DCD80093DFF7 /* OrdersState.swift */,
+			);
+			path = "action-states";
+			sourceTree = "<group>";
+		};
+		0E4407442723532500632B5F /* DarkKitchenTests */ = {
+			isa = PBXGroup;
+			children = (
+				0E4E61F7272418C100E11DDC /* extensions */,
+				0E44074C2723534A00632B5F /* stubs */,
+				0E4407452723532500632B5F /* MenuTest.swift */,
+			);
+			path = DarkKitchenTests;
+			sourceTree = "<group>";
+		};
+		0E44074C2723534A00632B5F /* stubs */ = {
+			isa = PBXGroup;
+			children = (
+				0E44074D2723538200632B5F /* MenuRepositoryStub.swift */,
+			);
+			path = stubs;
+			sourceTree = "<group>";
+		};
+		0E4E61F7272418C100E11DDC /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0E4E61FA27241AA000E11DDC /* Loadable+Equatable.swift */,
+				0E201D602729E6AF0093DFF7 /* Pushable+Equatable.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		0E8B135026FA4DB0006D36D5 /* repositories */ = {
+			isa = PBXGroup;
+			children = (
+				0E44073E2723481A00632B5F /* action-states */,
+				0E8B136826FA560F006D36D5 /* MenuRepository.swift */,
+				0E8B136A26FA5675006D36D5 /* OrderRepository.swift */,
+				0E44074F272358A000632B5F /* RepositoryError.swift */,
+			);
+			path = repositories;
+			sourceTree = "<group>";
+		};
+		0E8B135126FA4DBC006D36D5 /* business */ = {
+			isa = PBXGroup;
+			children = (
+				0E8B135E26FA4F0F006D36D5 /* MenuInteractor+MenuProvider.swift */,
+				0E8B136226FA5467006D36D5 /* CartInteractor.swift */,
+				0E8B136426FA552B006D36D5 /* ProfileInteractor.swift */,
+				0E8B136626FA554E006D36D5 /* OrderInteractor.swift */,
+				0E4E61FC272420F500E11DDC /* MenuProvider.swift */,
+				0E201D562729D7630093DFF7 /* CombineInteractor.swift */,
+				0E201D582729DBE00093DFF7 /* OrdersProvider.swift */,
+				0E201D5A2729DC080093DFF7 /* OrderSender.swift */,
+			);
+			path = business;
+			sourceTree = "<group>";
+		};
+		0E8B135226FA4DC8006D36D5 /* environment */ = {
+			isa = PBXGroup;
+			children = (
+				0E8B136026FA53CE006D36D5 /* AppState.swift */,
+				0E8B137726FA5BAA006D36D5 /* Interactors.swift */,
+				0ECBDACB271DF046007C9693 /* UserData.swift */,
+			);
+			path = environment;
+			sourceTree = "<group>";
+		};
+		0E8B135326FA4DD2006D36D5 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				0E8B135426FA4E10006D36D5 /* MenuItems.swift */,
+				0E8B135626FA4E34006D36D5 /* Cart.swift */,
+				0E8B135826FA4E45006D36D5 /* Order.swift */,
+				0E8B135A26FA4E53006D36D5 /* Profile.swift */,
+				0E8B135C26FA4E62006D36D5 /* Item.swift */,
+				0E8B136C26FA56F8006D36D5 /* PushOrderResult.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,9 +268,29 @@
 			dependencies = (
 			);
 			name = DarkKitchen;
+			packageProductDependencies = (
+			);
 			productName = DarkKitchen;
 			productReference = 0E3B540326F7A4E300DE526C /* DarkKitchen.app */;
 			productType = "com.apple.product-type.application";
+		};
+		0E4407422723532500632B5F /* DarkKitchenTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E4407492723532500632B5F /* Build configuration list for PBXNativeTarget "DarkKitchenTests" */;
+			buildPhases = (
+				0E44073F2723532500632B5F /* Sources */,
+				0E4407402723532500632B5F /* Frameworks */,
+				0E4407412723532500632B5F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E4407482723532500632B5F /* PBXTargetDependency */,
+			);
+			name = DarkKitchenTests;
+			productName = DarkKitchenTests;
+			productReference = 0E4407432723532500632B5F /* DarkKitchenTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -95,11 +298,15 @@
 		0E3B53FB26F7A4E300DE526C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					0E3B540226F7A4E300DE526C = {
 						CreatedOnToolsVersion = 12.5.1;
+					};
+					0E4407422723532500632B5F = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 0E3B540226F7A4E300DE526C;
 					};
 				};
 			};
@@ -117,6 +324,7 @@
 			projectRoot = "";
 			targets = (
 				0E3B540226F7A4E300DE526C /* DarkKitchen */,
+				0E4407422723532500632B5F /* DarkKitchenTests */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +339,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0E4407412723532500632B5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -138,12 +353,55 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E8B135926FA4E46006D36D5 /* Order.swift in Sources */,
+				0E8B137826FA5BAA006D36D5 /* Interactors.swift in Sources */,
 				0E3B540926F7A4E300DE526C /* ContentView.swift in Sources */,
+				0E8B136D26FA56F8006D36D5 /* PushOrderResult.swift in Sources */,
+				0E201D5D2729DCD80093DFF7 /* OrdersState.swift in Sources */,
+				0E8B135B26FA4E53006D36D5 /* Profile.swift in Sources */,
+				0E8B136126FA53CE006D36D5 /* AppState.swift in Sources */,
+				0E8B135D26FA4E62006D36D5 /* Item.swift in Sources */,
+				0E8B135726FA4E34006D36D5 /* Cart.swift in Sources */,
+				0E8B136326FA5467006D36D5 /* CartInteractor.swift in Sources */,
+				0E8B136726FA554E006D36D5 /* OrderInteractor.swift in Sources */,
+				0ECBDACC271DF046007C9693 /* UserData.swift in Sources */,
+				0E8B135526FA4E10006D36D5 /* MenuItems.swift in Sources */,
+				0E4E61FD272420F500E11DDC /* MenuProvider.swift in Sources */,
+				0E44073D272347C700632B5F /* MenuState.swift in Sources */,
+				0E8B136926FA560F006D36D5 /* MenuRepository.swift in Sources */,
+				0E440750272358A000632B5F /* RepositoryError.swift in Sources */,
+				0E201D5F2729E0130093DFF7 /* Pushable.swift in Sources */,
+				0E8B136B26FA5675006D36D5 /* OrderRepository.swift in Sources */,
+				0E201D5B2729DC080093DFF7 /* OrderSender.swift in Sources */,
 				0E3B540726F7A4E300DE526C /* DarkKitchenApp.swift in Sources */,
+				0ECBDACA271DF039007C9693 /* Loadable.swift in Sources */,
+				0E201D592729DBE00093DFF7 /* OrdersProvider.swift in Sources */,
+				0E8B135F26FA4F0F006D36D5 /* MenuInteractor+MenuProvider.swift in Sources */,
+				0E8B136526FA552B006D36D5 /* ProfileInteractor.swift in Sources */,
+				0E201D572729D7630093DFF7 /* CombineInteractor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E44073F2723532500632B5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E4E61FB27241AA000E11DDC /* Loadable+Equatable.swift in Sources */,
+				0E44074E2723538200632B5F /* MenuRepositoryStub.swift in Sources */,
+				0E201D612729E6AF0093DFF7 /* Pushable+Equatable.swift in Sources */,
+				0E4407462723532500632B5F /* MenuTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0E4407482723532500632B5F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E3B540226F7A4E300DE526C /* DarkKitchen */;
+			targetProxy = 0E4407472723532500632B5F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0E3B541026F7A4E700DE526C /* Debug */ = {
@@ -306,6 +564,56 @@
 			};
 			name = Release;
 		};
+		0E44074A2723532500632B5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VSV8CRC85G;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.examples.DarkKitchenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DarkKitchen.app/DarkKitchen";
+			};
+			name = Debug;
+		};
+		0E44074B2723532500632B5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VSV8CRC85G;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.examples.DarkKitchenTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DarkKitchen.app/DarkKitchen";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -323,6 +631,15 @@
 			buildConfigurations = (
 				0E3B541326F7A4E700DE526C /* Debug */,
 				0E3B541426F7A4E700DE526C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E4407492723532500632B5F /* Build configuration list for PBXNativeTarget "DarkKitchenTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E44074A2723532500632B5F /* Debug */,
+				0E44074B2723532500632B5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
