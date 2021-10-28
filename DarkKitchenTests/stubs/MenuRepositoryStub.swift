@@ -10,12 +10,12 @@ import Combine
 
 @testable import DarkKitchen
 
-enum MenuRepositoryStubBehavior {
-    case succeed
-    case failedToGetFullMenu
-}
-
 class MenuRepositoryStub: MenuRepository {
+    enum MenuRepositoryStubBehavior {
+        case succeed
+        case failedToGetFullMenu
+    }
+
     var items: MenuItems = [Item(), Item()]
     var behavior: MenuRepositoryStubBehavior = .succeed
 

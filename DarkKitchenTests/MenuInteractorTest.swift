@@ -8,7 +8,7 @@ import SwiftUI
 
 @testable import DarkKitchen
 
-class MenuTest: XCTestCase {
+class MenuInteractorTest: XCTestCase {
     var menuRepository: MenuRepositoryStub!
     var menu: MenuInteractor!
 
@@ -52,7 +52,7 @@ class MenuTest: XCTestCase {
         XCTAssertEqual(expectedStates, incomingStates)
     }
 
-    func testGetsFailedMenuStateIfUnableToGetFullMenu() {
+    func testSetsFailedMenuStateIfUnableToGetFullMenu() {
         menuRepository = MenuRepositoryStub()
         menuRepository.behavior = .failedToGetFullMenu
         menu = MenuInteractor(menuRepository: menuRepository)

@@ -15,8 +15,8 @@ class OrderInteractor: CombineInteractor, OrdersProvider, OrderSender {
     var repository: Repository
     var cancellable: Set<AnyCancellable> = .init()
 
-    init(repository: Repository) {
-        self.repository = repository
+    init(orderRepository: Repository) {
+        self.repository = orderRepository
     }
 }
 
