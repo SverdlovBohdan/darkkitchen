@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Order {}
+struct Order: Codable {}
 
 typealias Orders = [Order]

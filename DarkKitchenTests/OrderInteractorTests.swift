@@ -11,8 +11,8 @@ import SwiftUI
 @testable import DarkKitchen
 
 class OrderInteractorTest: XCTestCase {
-    var repository: OrderRepositoryStub!
-    var interactor: OrderInteractor!
+    var repository: OrdersRepositoryStub!
+    var interactor: OrdersInteractor!
 
     var ordersState: OrdersState!
     var expectation: XCTestExpectation!
@@ -37,8 +37,8 @@ class OrderInteractorTest: XCTestCase {
     }
 
     func testCanRetrieveOrders() throws {
-        repository = OrderRepositoryStub()
-        interactor = OrderInteractor(orderRepository: repository)
+        repository = OrdersRepositoryStub()
+        interactor = OrdersInteractor(orderRepository: repository)
 
         interactor.getOrders(ordersStateHolder: .init(get: {
             self.ordersState
@@ -63,9 +63,9 @@ class OrderInteractorTest: XCTestCase {
     }
 
     func testSetsFailedOrdersStateIfUnableToGetOrders() {
-        repository = OrderRepositoryStub()
+        repository = OrdersRepositoryStub()
         repository.behavior = .failedToGetOrders
-        interactor = OrderInteractor(orderRepository: repository)
+        interactor = OrdersInteractor(orderRepository: repository)
 
         interactor.getOrders(ordersStateHolder: .init(get: {
             self.ordersState
@@ -90,8 +90,8 @@ class OrderInteractorTest: XCTestCase {
     }
 
     func testCanSendOrder() {
-        repository = OrderRepositoryStub()
-        interactor = OrderInteractor(orderRepository: repository)
+        repository = OrdersRepositoryStub()
+        interactor = OrdersInteractor(orderRepository: repository)
 
         interactor.sendOrder(pushOrderStateHolder: .init(get: {
             self.pushOrderState
@@ -114,9 +114,9 @@ class OrderInteractorTest: XCTestCase {
     }
 
     func testSetsFailedPushOrderStateIfUnableToSendOrder() {
-        repository = OrderRepositoryStub()
+        repository = OrdersRepositoryStub()
         repository.behavior = .failedToPushOrder
-        interactor = OrderInteractor(orderRepository: repository)
+        interactor = OrdersInteractor(orderRepository: repository)
 
         interactor.sendOrder(pushOrderStateHolder: .init(get: {
             self.pushOrderState

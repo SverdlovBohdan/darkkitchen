@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 import Combine
 
-class OrderInteractor: CombineInteractor, OrdersProvider, OrderSender {
-    typealias Repository = OrderRepository
+class OrdersInteractor: CombineInteractor, OrdersProvider, OrderSender {
+    typealias Repository = OrdersRepository
 
     var repository: Repository
     var cancellable: Set<AnyCancellable> = .init()
@@ -20,7 +20,7 @@ class OrderInteractor: CombineInteractor, OrdersProvider, OrderSender {
     }
 }
 
-extension OrdersProvider where Self: CombineInteractor, Self.Repository == OrderRepository {
+extension OrdersProvider where Self: CombineInteractor, Self.Repository == OrdersRepository {
     func getOrders(ordersStateHolder ordersState: Binding<OrdersState>) {
         ordersState.wrappedValue = .loading
 
@@ -39,7 +39,7 @@ extension OrdersProvider where Self: CombineInteractor, Self.Repository == Order
     }
 }
 
-extension OrderSender where Self: CombineInteractor, Self.Repository == OrderRepository {
+extension OrderSender where Self: CombineInteractor, Self.Repository == OrdersRepository {
     func sendOrder(pushOrderStateHolder pushOrderState: Binding<PushOrderState>, order: Order) {
         pushOrderState.wrappedValue = .pushing(order)
 

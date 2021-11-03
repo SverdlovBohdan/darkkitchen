@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import RepositoryRequestPerformer
 
-protocol OrderRepository {
+protocol OrdersRepository {
     func pushOrder(order: Order) -> AnyPublisher<PushOrderResult, Error>
     func getOrders() -> AnyPublisher<Orders, Error>
 }

@@ -9,5 +9,7 @@ import Foundation
 import SwiftUI
 
 class AppState: ObservableObject {
-    @Published var userData: UserData = UserData(fullMenuState: .idle)
+    @Published var userData: UserData = UserData(fullMenuState: .idle,
+                                                 ordersState: .idle,
+                                                 pushOrderState: .idle)
 }

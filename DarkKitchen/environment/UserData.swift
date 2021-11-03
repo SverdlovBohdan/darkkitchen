@@ -9,4 +9,6 @@ import Foundation
 
 struct UserData {
     var fullMenuState: MenuState
+    var ordersState: OrdersState
+    var pushOrderState: PushOrderState
 }

@@ -10,7 +10,7 @@ import Combine
 
 @testable import DarkKitchen
 
-class OrderRepositoryStub: OrderRepository {
+class OrdersRepositoryStub: OrdersRepository {
     enum RepositoryBehavior {
         case succeed
         case failedToGetOrders
