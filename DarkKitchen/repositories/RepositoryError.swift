@@ -8,7 +8,5 @@
 import Foundation
 
 enum RepositoryError: Error {
-    case RetrieveDataError
-    case DecodeDataError
     case PushDataError
 }

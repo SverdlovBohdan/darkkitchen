@@ -8,34 +8,38 @@
 import Foundation
 import Combine
 
+struct Endpoint {
+    var scheme: String
+    var host: String
+}
+
 struct NetworkResponse<Wrapped: Decodable>: Decodable {
     var result: Wrapped
 }
 
-struct NetworkRequest<Kind: NetworkRequestKind, Response: Decodable> {
-    private let host: String
+struct NetworkRequest<Kind: NetworkRequestKind, Response: Decodable>: CustomStringConvertible {
+    private let endpoint: Endpoint
     private let path: String
-    private let queryItems: [String:String]?
+    private let queryItems: [URLQueryItem]?
 
-    init(host: String, path: String, queryItems: [String:String]? = nil) {
-        self.host = host
+    var description: String {
+        return "\(endpoint.scheme)\(endpoint.host)/\(path)/\(String(describing: queryItems))"
+    }
+
+    init(endpoint: Endpoint, path: String, queryItems: [URLQueryItem]? = nil) {
+        self.endpoint = endpoint
         self.path = path
-        self.queryItems = nil
+        self.queryItems = queryItems
     }
 }
 
 extension NetworkRequest {
     func makeUrlRequest(with data: Kind.RequestData) -> URLRequest? {
         var components = URLComponents()
-        components.scheme = "http"
-        components.host = host
+        components.scheme = endpoint.scheme
+        components.host = endpoint.host
         components.path = "/\(path)"
-
-        if let queryItems = queryItems {
-            components.queryItems = queryItems.compactMap { name, value in
-                return URLQueryItem(name: name, value: value)
-            }
-        }
+        components.queryItems = queryItems
 
         guard let url = components.url else {
             return nil
@@ -78,28 +82,59 @@ enum NetworkRequestKinds {
         static func prepare(_ request: inout URLRequest, with data: PrivatePushRequestData) {
             request.httpMethod = "POST"
             request.addValue("Bearer \(data.token)", forHTTPHeaderField: "Authorization")
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpBody = data.body
         }
     }
 }
 
-enum NetworkingError<K: NetworkRequestKind, R: Decodable>: Error {
-    case InvalidEndpoint(enpoint: NetworkRequest<K, R>)
+enum NetworkError: Error {
+    case invalidEndpoint(endpoint: String)
+    case apiError(reason: String)
+    case unknown
 }
 
-extension URLSession {
+protocol NetworkRequestPublishable {
+    func publisher<K, R>(
+        for request: NetworkRequest<K, R>,
+        using requestData: K.RequestData,
+        decoder: JSONDecoder) -> AnyPublisher<R, Error>
+}
+
+extension URLSession: NetworkRequestPublishable {
     func publisher<K, R>(
         for request: NetworkRequest<K, R>,
         using requestData: K.RequestData,
         decoder: JSONDecoder = .init()
     ) -> AnyPublisher<R, Error> {
         guard let request = request.makeUrlRequest(with: requestData) else {
-            return Fail(error: NetworkingError.InvalidEndpoint(enpoint: request))
+            return Fail(error: NetworkError.invalidEndpoint(endpoint: request.description))
                 .eraseToAnyPublisher()
         }
 
         return dataTaskPublisher(for: request)
-            .map(\.data)
+            .tryMap({ data, response in
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    throw NetworkError.unknown
+                }
+                if (httpResponse.statusCode == 401) {
+                    throw NetworkError.apiError(reason: "Unauthorized");
+                }
+                if (httpResponse.statusCode == 403) {
+                    throw NetworkError.apiError(reason: "Resource forbidden");
+                }
+                if (httpResponse.statusCode == 404) {
+                    throw NetworkError.apiError(reason: "Resource not found");
+                }
+                if (405..<500 ~= httpResponse.statusCode) {
+                    throw NetworkError.apiError(reason: "client error");
+                }
+                if (500..<600 ~= httpResponse.statusCode) {
+                    throw NetworkError.apiError(reason: "server error");
+                }
+
+                return data
+            })
             .decode(type: NetworkResponse<R>.self, decoder: decoder)
             .map(\.result)
             .eraseToAnyPublisher()

@@ -9,8 +9,6 @@ import Foundation
 import SwiftUI
 
 public struct GlobalObjectsContainer {
-    var configuration: Configuration!
-
     var menuRepository: MenuStorageRest!
     var ordersRepository: OrdersStorageRest!
 
@@ -20,16 +18,15 @@ public struct GlobalObjectsContainer {
 
 extension GlobalObjectsContainer {
     static var preview: GlobalObjectsContainer {
-        let developmentConfiguration = Configuration(kind: .development)
-
-        let menuStorage = MenuStorageRest(host: developmentConfiguration.host)
-        let ordersStorate = OrdersStorageRest(host: developmentConfiguration.host)
+        let menuStorage = MenuStorageRest(endpoint: EndpointConfiguration.test,
+                                          networkRequest: URLSession.shared)
+        let ordersStorate = OrdersStorageRest(endpoint: EndpointConfiguration.test,
+                                              networkRequest: URLSession.shared)
 
         let menu = MenuInteractor(menuRepository: menuStorage)
         let orders = OrdersInteractor(orderRepository: ordersStorate)
 
-        return .init(configuration: developmentConfiguration,
-                     menuRepository: menuStorage,
+        return .init(menuRepository: menuStorage,
                      ordersRepository: ordersStorate,
                      menuInteractor: menu,
                      ordersInteractor: orders)

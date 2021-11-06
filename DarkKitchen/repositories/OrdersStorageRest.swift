@@ -9,10 +9,12 @@ import Foundation
 import Combine
 
 class OrdersStorageRest: OrdersRepository {
-    private let host: String
+    private let endpoint: EndpointConfiguration
+    private let networkRequest: NetworkRequestPublishable
 
-    init(host: String) {
-        self.host = host
+    init(endpoint: EndpointConfiguration, networkRequest: NetworkRequestPublishable) {
+        self.endpoint = endpoint
+        self.networkRequest = networkRequest
     }
 
     func pushOrder(order: Order) -> AnyPublisher<PushOrderResult, Error> {
@@ -21,25 +23,29 @@ class OrdersStorageRest: OrdersRepository {
                 .eraseToAnyPublisher()
         }
 
-        return URLSession.shared
-            .publisher(for: .pushOrder(host: host, path: "push-order"),
-                       using: PrivatePushRequestData(token: "1234", body: encodedOrder))
+        return networkRequest
+            .publisher(for: .pushOrder(endpoint: .init(scheme: endpoint.scheme, host: endpoint.host),
+                                       path: RepositoryPaths.pushOrder.rawValue),
+                          using: PrivatePushRequestData(token: "1234", body: encodedOrder),
+                          decoder: .init())
     }
 
     func getOrders() -> AnyPublisher<Orders, Error> {
-        return URLSession.shared
-            .publisher(for: .getOrders(host: host, path: "my-orders"), using: "1234")
+        return networkRequest
+            .publisher(for: .getOrders(endpoint: .init(scheme: endpoint.scheme, host: endpoint.host),
+                                       path: RepositoryPaths.orders.rawValue),
+                          using: "1234", decoder: .init())
     }
 }
 
 extension NetworkRequest where Kind == NetworkRequestKinds.Private, Response == Orders {
-    static func getOrders(host: String, path: String) -> Self {
-        return NetworkRequest(host: host, path: path)
+    static func getOrders(endpoint: Endpoint, path: String) -> Self {
+        return NetworkRequest(endpoint: endpoint, path: path)
     }
 }
 
 extension NetworkRequest where Kind == NetworkRequestKinds.PrivatePush, Response == PushOrderResult {
-    static func pushOrder(host: String, path: String) -> Self {
-        return NetworkRequest(host: host, path: path)
+    static func pushOrder(endpoint: Endpoint, path: String) -> Self {
+        return NetworkRequest(endpoint: endpoint, path: path)
     }
 }

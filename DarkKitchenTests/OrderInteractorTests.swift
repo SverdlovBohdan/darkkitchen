@@ -85,7 +85,7 @@ class OrderInteractorTest: XCTestCase {
 
         wait(for: [expectation], timeout: 10.0)
 
-        expectedOrdersStates = [.loading, .failed(RepositoryError.RetrieveDataError)]
+        expectedOrdersStates = [.loading, .failed(RepositoryError.PushDataError)]
         XCTAssertEqual(expectedOrdersStates, incomingOrdersStates)
     }
 

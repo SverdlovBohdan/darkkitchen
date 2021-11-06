@@ -74,7 +74,7 @@ class MenuInteractorTest: XCTestCase {
 
         wait(for: [expectation], timeout: 10.0)
 
-        expectedStates = [.loading, .failed(RepositoryError.RetrieveDataError)]
+        expectedStates = [.loading, .failed(RepositoryError.PushDataError)]
         XCTAssertEqual(expectedStates, incomingStates)
     }
 }

@@ -26,7 +26,7 @@ class MenuRepositoryStub: MenuRepository {
                 .setFailureType(to: Error.self)
                 .eraseToAnyPublisher()
         case .failedToGetFullMenu:
-            return Fail(error: RepositoryError.RetrieveDataError)
+            return Fail(error: NetworkError.unknown)
                 .eraseToAnyPublisher()
         }
     }

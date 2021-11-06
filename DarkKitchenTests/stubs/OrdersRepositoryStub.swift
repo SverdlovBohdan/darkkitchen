@@ -27,7 +27,7 @@ class OrdersRepositoryStub: OrdersRepository {
                 .setFailureType(to: Error.self)
                 .eraseToAnyPublisher()
         default:
-            return Fail(error: RepositoryError.RetrieveDataError)
+            return Fail(error: NetworkError.unknown)
                 .eraseToAnyPublisher()
         }
     }

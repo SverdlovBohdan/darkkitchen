@@ -15,15 +15,4 @@ struct Configuration {
     }
 
     var kind: Kind
-
-    var host: String {
-        switch kind {
-        case .development:
-            return "127.0.0.1"
-        case .staging:
-            return "127.0.0.1"
-        case .production:
-            return "127.0.0.1"
-        }
-    }
 }

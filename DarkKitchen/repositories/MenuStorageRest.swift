@@ -9,21 +9,24 @@ import Foundation
 import Combine
 
 class MenuStorageRest: MenuRepository {
-    private let host: String
+    private let endpoint: EndpointConfiguration
+    private let networkRequest: NetworkRequestPublishable
 
-    init(host: String) {
-        self.host = host
+    init(endpoint: EndpointConfiguration, networkRequest: NetworkRequestPublishable) {
+        self.endpoint = endpoint
+        self.networkRequest = networkRequest
     }
 
     func getFullMenu() -> AnyPublisher<MenuItems, Error> {
-        return URLSession.shared
-            .publisher(for: .getFullMenu(host: host, path: "/full-menu"),
-                       using: Void())
+        return networkRequest
+            .publisher(for: .getFullMenu(endpoint: .init(scheme: endpoint.scheme, host: endpoint.host),
+                                         path: RepositoryPaths.fullMenu.rawValue),
+                          using: Void(), decoder: .init())
     }
 }
 
 extension NetworkRequest where Kind == NetworkRequestKinds.Public, Response == MenuItems {
-    static func getFullMenu(host: String, path: String) -> Self {
-        return NetworkRequest(host: host, path: path)
+    static func getFullMenu(endpoint: Endpoint, path: String) -> Self {
+        return NetworkRequest(endpoint: endpoint, path: path)
     }
 }
