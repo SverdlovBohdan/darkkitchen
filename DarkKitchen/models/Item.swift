@@ -7,4 +7,5 @@
 
 import Foundation
 
-struct Item: Codable  {}
+struct Item: Codable  {
+}

@@ -6,9 +6,42 @@
 //
 
 import XCTest
+import Combine
 @testable import DarkKitchen
 
-struct ResponseStub: Decodable {}
+struct ResponseStub: Codable {
+    var id: UUID = .init()
+}
+
+extension XCTestCase {
+    func awaitCompletion<T: Publisher>(
+        of publisher: T,
+        timeout: TimeInterval = 10.0) throws -> [T.Output] {
+            let expectation = self.expectation(description: "Awaiting publisher completion")
+
+            var completion: Subscribers.Completion<T.Failure>?
+            var output = [T.Output]()
+
+            let cancellable = publisher.sink {
+                completion = $0
+                expectation.fulfill()
+            } receiveValue: {
+                output.append($0)
+            }
+
+            waitForExpectations(timeout: timeout)
+
+            switch completion {
+            case .failure(let error):
+                throw error
+            case .finished:
+                return output
+            case nil:
+                cancellable.cancel()
+                return []
+            }
+        }
+}
 
 class NetworkRequestTest: XCTestCase {
 
@@ -80,6 +113,41 @@ class NetworkRequestTest: XCTestCase {
         }
         else {
             XCTFail("Expected POST HTTP method type")
+        }
+    }
+
+    func testCanDecodeResponse() throws {
+        let request: NetworkRequest = NetworkRequest<NetworkRequestKinds.Public, ResponseStub>(
+            endpoint: Endpoint(scheme: EndpointConfiguration.test.scheme, host: EndpointConfiguration.test.host),
+            path: "endpoint")
+        let responder: UrlProtocolMock = .init()
+        UrlProtocolMock.statusCode = 200
+        UrlProtocolMock.data = try JSONEncoder().encode(NetworkResponse(result: ResponseStub()))
+        let urlSession: URLSession = URLSession(mockResponder: responder)
+        let result = try awaitCompletion(of: urlSession.publisher(for: request, using: Void()))
+        XCTAssertFalse(result.isEmpty)
+    }
+
+    func testFailsIfCannotDecodeResponse() throws {
+        let request: NetworkRequest = NetworkRequest<NetworkRequestKinds.Public, ResponseStub>(
+            endpoint: Endpoint(scheme: EndpointConfiguration.test.scheme, host: EndpointConfiguration.test.host),
+            path: "endpoint")
+        let responder: UrlProtocolMock = .init()
+        UrlProtocolMock.data = Data()
+        let urlSession: URLSession = URLSession(mockResponder: responder)
+        XCTAssertThrowsError(try awaitCompletion(of: urlSession.publisher(for: request, using: Void())))
+    }
+
+    func testCanHandleHttpErrorCodes() throws {
+        let request: NetworkRequest = NetworkRequest<NetworkRequestKinds.Public, ResponseStub>(
+            endpoint: Endpoint(scheme: EndpointConfiguration.test.scheme, host: EndpointConfiguration.test.host),
+            path: "endpoint")
+        let responder: UrlProtocolMock = .init()
+        for i in 403..<600 {
+            UrlProtocolMock.statusCode = i
+            UrlProtocolMock.data = try JSONEncoder().encode(NetworkResponse(result: ResponseStub()))
+            let urlSession: URLSession = URLSession(mockResponder: responder)
+            XCTAssertThrowsError(try awaitCompletion(of: urlSession.publisher(for: request, using: Void())))
         }
     }
 }

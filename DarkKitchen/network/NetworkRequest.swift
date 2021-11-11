@@ -13,11 +13,11 @@ struct Endpoint {
     var host: String
 }
 
-struct NetworkResponse<Wrapped: Decodable>: Decodable {
+struct NetworkResponse<Wrapped: Codable>: Codable {
     var result: Wrapped
 }
 
-struct NetworkRequest<Kind: NetworkRequestKind, Response: Decodable>: CustomStringConvertible {
+struct NetworkRequest<Kind: NetworkRequestKind, Response: Codable>: CustomStringConvertible {
     private let endpoint: Endpoint
     private let path: String
     private let queryItems: [URLQueryItem]?
