@@ -9,4 +9,5 @@ import Foundation
 
 enum RepositoryError: Error {
     case PushDataError
+    case InternalError
 }

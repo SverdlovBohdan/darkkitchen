@@ -7,4 +7,5 @@
 
 import Foundation
 
+typealias CategoriesState = Loadable<ItemCategories>
 typealias MenuState = Loadable<MenuItems>

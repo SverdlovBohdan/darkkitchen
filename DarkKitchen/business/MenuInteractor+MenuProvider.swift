@@ -21,19 +21,32 @@ class MenuInteractor: CombineInteractor, MenuProvider {
 }
 
 extension MenuProvider where Self: CombineInteractor, Self.Repository == MenuRepository {
-    func getFullMenu(menuStateHolder menuState: Binding<MenuState>) {
-        menuState.wrappedValue = .loading
+    func getFullMenu(appStateHolder appState: Binding<AppState>) {
+        appState.userData.fullMenuState.wrappedValue = .loading
+        appState.userData.categoriesState.wrappedValue = .loading
 
-        repository.getFullMenu()
-            .map { menuItems in
-                return MenuState.loaded(menuItems)
+        repository.getCategories()
+            .flatMap { categories -> AnyPublisher<[MenuItems], Error> in
+                appState.userData.categoriesState.wrappedValue = CategoriesState.loaded(categories)
+
+                return Publishers.MergeMany<AnyPublisher<MenuItems, Error>>(categories.compactMap{ category -> AnyPublisher<MenuItems, Error> in
+                    return self.repository.getProducts(for: category.id)
+                })
+                    .collect()
+                    .eraseToAnyPublisher()
+            }
+            .map { products in
+                return MenuState.loaded(Array(products.joined()))
             }
             .catch { error in
                 Just(MenuState.failed(error))
             }
             .receive(on: RunLoop.main)
             .sink { state in
-                menuState.wrappedValue = state
+                if case MenuState.failed(let error) = state {
+                    appState.userData.categoriesState.wrappedValue = CategoriesState.failed(error)
+                }
+                appState.userData.fullMenuState.wrappedValue = state
             }
             .store(in: &cancellable)
     }

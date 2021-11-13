@@ -11,4 +11,5 @@ struct UserData {
     var fullMenuState: MenuState
     var ordersState: OrdersState
     var pushOrderState: PushOrderState
+    var categoriesState: CategoriesState
 }

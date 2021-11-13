@@ -26,7 +26,6 @@
 		0E4C32C7272E990700AA5F06 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4C32C6272E990700AA5F06 /* NetworkRequest.swift */; };
 		0E4E61FB27241AA000E11DDC /* Loadable+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E61FA27241AA000E11DDC /* Loadable+Equatable.swift */; };
 		0E4E61FD272420F500E11DDC /* MenuProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4E61FC272420F500E11DDC /* MenuProvider.swift */; };
-		0E8B135526FA4E10006D36D5 /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B135426FA4E10006D36D5 /* MenuItems.swift */; };
 		0E8B135726FA4E34006D36D5 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B135626FA4E34006D36D5 /* Cart.swift */; };
 		0E8B135926FA4E46006D36D5 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B135826FA4E45006D36D5 /* Order.swift */; };
 		0E8B135B26FA4E53006D36D5 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B135A26FA4E53006D36D5 /* Profile.swift */; };
@@ -45,6 +44,7 @@
 		0EC797D727333796006C45F8 /* RepositoryPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC797D627333796006C45F8 /* RepositoryPaths.swift */; };
 		0ECBDACA271DF039007C9693 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECBDAC9271DF039007C9693 /* Loadable.swift */; };
 		0ECBDACC271DF046007C9693 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECBDACB271DF046007C9693 /* UserData.swift */; };
+		0ED5D2D7273D8883009D48EE /* ItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED5D2D6273D8882009D48EE /* ItemCategory.swift */; };
 		0EF0C4E9272B1A82004092CF /* OrdersRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF0C4E8272B1A82004092CF /* OrdersRepositoryStub.swift */; };
 		0EF0C4EB272B1C3D004092CF /* OrderInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF0C4EA272B1C3D004092CF /* OrderInteractorTests.swift */; };
 		0EF0C4ED272B2C78004092CF /* MenuStorageRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF0C4EC272B2C78004092CF /* MenuStorageRest.swift */; };
@@ -86,7 +86,6 @@
 		0E4C32C6272E990700AA5F06 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		0E4E61FA27241AA000E11DDC /* Loadable+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Loadable+Equatable.swift"; sourceTree = "<group>"; };
 		0E4E61FC272420F500E11DDC /* MenuProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuProvider.swift; sourceTree = "<group>"; };
-		0E8B135426FA4E10006D36D5 /* MenuItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
 		0E8B135626FA4E34006D36D5 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		0E8B135826FA4E45006D36D5 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		0E8B135A26FA4E53006D36D5 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
@@ -105,6 +104,7 @@
 		0EC797D627333796006C45F8 /* RepositoryPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryPaths.swift; sourceTree = "<group>"; };
 		0ECBDAC9271DF039007C9693 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		0ECBDACB271DF046007C9693 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		0ED5D2D6273D8882009D48EE /* ItemCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategory.swift; sourceTree = "<group>"; };
 		0EF0C4E8272B1A82004092CF /* OrdersRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersRepositoryStub.swift; sourceTree = "<group>"; };
 		0EF0C4EA272B1C3D004092CF /* OrderInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInteractorTests.swift; sourceTree = "<group>"; };
 		0EF0C4EC272B2C78004092CF /* MenuStorageRest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuStorageRest.swift; sourceTree = "<group>"; };
@@ -288,10 +288,10 @@
 			children = (
 				0E8B135626FA4E34006D36D5 /* Cart.swift */,
 				0E8B135C26FA4E62006D36D5 /* Item.swift */,
-				0E8B135426FA4E10006D36D5 /* MenuItems.swift */,
 				0E8B135826FA4E45006D36D5 /* Order.swift */,
 				0E8B135A26FA4E53006D36D5 /* Profile.swift */,
 				0E8B136C26FA56F8006D36D5 /* PushOrderResult.swift */,
+				0ED5D2D6273D8882009D48EE /* ItemCategory.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -413,7 +413,6 @@
 				0E8B136726FA554E006D36D5 /* OrdersInteractor.swift in Sources */,
 				0ECBDACC271DF046007C9693 /* UserData.swift in Sources */,
 				0E3DB22B2736883700D10569 /* EndpointConfiguration.swift in Sources */,
-				0E8B135526FA4E10006D36D5 /* MenuItems.swift in Sources */,
 				0E4E61FD272420F500E11DDC /* MenuProvider.swift in Sources */,
 				0E44073D272347C700632B5F /* MenuState.swift in Sources */,
 				0E8B136926FA560F006D36D5 /* MenuRepository.swift in Sources */,
@@ -429,6 +428,7 @@
 				0E8B135F26FA4F0F006D36D5 /* MenuInteractor+MenuProvider.swift in Sources */,
 				0E8B136526FA552B006D36D5 /* ProfileInteractor.swift in Sources */,
 				0E201D572729D7630093DFF7 /* CombineInteractor.swift in Sources */,
+				0ED5D2D7273D8883009D48EE /* ItemCategory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

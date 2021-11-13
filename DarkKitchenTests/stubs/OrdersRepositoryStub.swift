@@ -17,7 +17,10 @@ class OrdersRepositoryStub: OrdersRepository {
         case failedToPushOrder
     }
 
-    var items: MenuItems = [Item(), Item()]
+    var items: MenuItems = [Item(name: "", price: 0, description: "",
+                                 category: .init(id: 0, name: ""), main_image: .init(url: "")),
+                            Item(name: "", price: 0, description: "",
+                                 category: .init(id: 0, name: ""), main_image: .init(url: ""))]
     var behavior: RepositoryBehavior = .succeed
 
     func getOrders() -> AnyPublisher<Orders, Error> {

@@ -11,23 +11,16 @@ import Combine
 @testable import DarkKitchen
 
 class MenuRepositoryStub: MenuRepository {
-    enum MenuRepositoryStubBehavior {
-        case succeed
-        case failedToGetFullMenu
+    var getCategoriesPublisher: AnyPublisher<ItemCategories, Error>?
+    var getProductsPublisher: AnyPublisher<MenuItems, Error>?
+    var categories: [Int] = .init()
+
+    func getCategories() -> AnyPublisher<ItemCategories, Error> {
+        return getCategoriesPublisher!
     }
 
-    var items: MenuItems = [Item(), Item()]
-    var behavior: MenuRepositoryStubBehavior = .succeed
-
-    func getFullMenu() -> AnyPublisher<MenuItems, Error> {
-        switch behavior {
-        case .succeed:
-            return Just(items)
-                .setFailureType(to: Error.self)
-                .eraseToAnyPublisher()
-        case .failedToGetFullMenu:
-            return Fail(error: NetworkError.unknown)
-                .eraseToAnyPublisher()
-        }
+    func getProducts(for categoryId: Int) -> AnyPublisher<MenuItems, Error> {
+        categories.append(categoryId)
+        return getProductsPublisher!
     }
 }

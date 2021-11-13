@@ -11,5 +11,6 @@ import SwiftUI
 class AppState: ObservableObject {
     @Published var userData: UserData = UserData(fullMenuState: .idle,
                                                  ordersState: .idle,
-                                                 pushOrderState: .idle)
+                                                 pushOrderState: .idle,
+                                                 categoriesState: .idle)
 }

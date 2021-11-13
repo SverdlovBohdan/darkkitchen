@@ -9,5 +9,6 @@ import Foundation
 import Combine
 
 protocol MenuRepository {
-    func getFullMenu() -> AnyPublisher<MenuItems, Error>
+    func getCategories() -> AnyPublisher<ItemCategories, Error>
+    func getProducts(for categoryId: Int) -> AnyPublisher<MenuItems, Error>
 }

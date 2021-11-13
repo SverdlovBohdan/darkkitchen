@@ -7,5 +7,17 @@
 
 import Foundation
 
-struct Item: Codable  {
+struct Item: Codable {
+    struct ImageUrl: Codable {
+        var url: String
+    }
+
+    var name: String
+    var price: Int
+    var description: String
+
+    var category: ItemCategory
+    var main_image: ImageUrl
 }
+
+typealias MenuItems = [Item]

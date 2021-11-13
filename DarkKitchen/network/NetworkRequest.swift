@@ -135,8 +135,10 @@ extension URLSession: NetworkRequestPublishable {
 
                 return data
             })
-            .decode(type: NetworkResponse<R>.self, decoder: decoder)
-            .map(\.result)
+            .decode(type: R.self, decoder: decoder)
+//            TODO: make configurable
+//            .decode(type: NetworkResponse<R>.self, decoder: decoder)
+//            .map(\.result)
             .eraseToAnyPublisher()
     }
 }

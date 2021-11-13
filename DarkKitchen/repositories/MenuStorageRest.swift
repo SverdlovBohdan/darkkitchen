@@ -9,24 +9,45 @@ import Foundation
 import Combine
 
 class MenuStorageRest: MenuRepository {
-    private let endpoint: EndpointConfiguration
+    private let endpointConfig: EndpointConfiguration
     private let networkRequest: NetworkRequestPublishable
+    private var endpoint: Endpoint {
+        return Endpoint(scheme: endpointConfig.scheme, host: endpointConfig.host)
+    }
 
     init(endpoint: EndpointConfiguration, networkRequest: NetworkRequestPublishable) {
-        self.endpoint = endpoint
+        self.endpointConfig = endpoint
         self.networkRequest = networkRequest
     }
 
-    func getFullMenu() -> AnyPublisher<MenuItems, Error> {
-        return networkRequest
-            .publisher(for: .getFullMenu(endpoint: .init(scheme: endpoint.scheme, host: endpoint.host),
-                                         path: RepositoryPaths.fullMenu.rawValue),
-                          using: Void(), decoder: .init())
+    func getCategories() -> AnyPublisher<ItemCategories, Error> {
+        return networkRequest.publisher(
+            for: .getCategories(endpoint: endpoint,
+                                path: RepositoryPaths.categories.rawValue,
+                                queryItems: [.init(name: "lang", value: "russian")]),
+               using: Void(), decoder: .init())
+    }
+
+    func getProducts(for categoryId: Int) -> AnyPublisher<MenuItems, Error> {
+        return networkRequest.publisher(
+            for: .getProducts(endpoint: endpoint,
+                              path: RepositoryPaths.products.rawValue,
+                              queryItems: [.init(name: "lang", value: "russian"),
+                                           .init(name: "category", value: "\(categoryId)"),
+                                           .init(name: "withChildren", value: "true"),
+                                           .init(name: "type", value: "1")]),
+               using: Void(), decoder: .init())
+    }
+}
+
+extension NetworkRequest where Kind == NetworkRequestKinds.Public, Response == ItemCategories {
+    static func getCategories(endpoint: Endpoint, path: String, queryItems: [URLQueryItem]) -> Self {
+        return NetworkRequest(endpoint: endpoint, path: path, queryItems: queryItems)
     }
 }
 
 extension NetworkRequest where Kind == NetworkRequestKinds.Public, Response == MenuItems {
-    static func getFullMenu(endpoint: Endpoint, path: String) -> Self {
-        return NetworkRequest(endpoint: endpoint, path: path)
+    static func getProducts(endpoint: Endpoint, path: String, queryItems: [URLQueryItem]) -> Self {
+        return NetworkRequest(endpoint: endpoint, path: path, queryItems: queryItems)
     }
 }
