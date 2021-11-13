@@ -85,7 +85,7 @@ class MenuInteractorTest: XCTestCase {
                     .eraseToAnyPublisher(),
                   setStateHandler: { state in
             switch state.userData.fullMenuState {
-            case .failed(let _):
+            case .failed(_):
                 print("\(state.userData.fullMenuState)")
                 self.expectation.fulfill()
             default:
@@ -97,5 +97,29 @@ class MenuInteractorTest: XCTestCase {
 
         wait(for: [expectation], timeout: 3.0)
         XCTAssertTrue(menuRepository.categories.isEmpty)
+    }
+
+    func testSetsFailedMenuStateIfUnableToGetProducts() throws {
+        configure(categories: Just(categories)
+                    .setFailureType(to: Error.self)
+                    .eraseToAnyPublisher(),
+                  products: Fail(error: NetworkError.unknown)
+                    .eraseToAnyPublisher(),
+                  setStateHandler: { state in
+            switch state.userData.fullMenuState {
+            case .failed(_):
+                print("\(state.userData.fullMenuState)")
+                self.expectation.fulfill()
+            default:
+                print("\(state.userData.fullMenuState)")
+            }
+
+            self.appState = state
+        })
+
+        wait(for: [expectation], timeout: 3.0)
+        XCTAssertEqual(menuRepository.categories, categories.compactMap({ category in
+            return category.id
+        }))
     }
 }
