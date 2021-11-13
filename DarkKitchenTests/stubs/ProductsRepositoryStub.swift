@@ -10,16 +10,16 @@ import Combine
 
 @testable import DarkKitchen
 
-class MenuRepositoryStub: MenuRepository {
-    var getCategoriesPublisher: AnyPublisher<ItemCategories, Error>?
-    var getProductsPublisher: AnyPublisher<MenuItems, Error>?
+class ProductsRepositoryStub: ProductsRepository {
+    var getCategoriesPublisher: AnyPublisher<ProductCategories, Error>?
+    var getProductsPublisher: AnyPublisher<Products, Error>?
     var categories: [Int] = .init()
 
-    func getCategories() -> AnyPublisher<ItemCategories, Error> {
+    func getCategories() -> AnyPublisher<ProductCategories, Error> {
         return getCategoriesPublisher!
     }
 
-    func getProducts(for categoryId: Int) -> AnyPublisher<MenuItems, Error> {
+    func getProducts(for categoryId: Int) -> AnyPublisher<Products, Error> {
         categories.append(categoryId)
         return getProductsPublisher!
     }

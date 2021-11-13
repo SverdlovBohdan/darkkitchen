@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class MenuStorageRest: MenuRepository {
+class ProductsStorageRest: ProductsRepository {
     private let endpointConfig: EndpointConfiguration
     private let networkRequest: NetworkRequestPublishable
     private var endpoint: Endpoint {
@@ -20,7 +20,7 @@ class MenuStorageRest: MenuRepository {
         self.networkRequest = networkRequest
     }
 
-    func getCategories() -> AnyPublisher<ItemCategories, Error> {
+    func getCategories() -> AnyPublisher<ProductCategories, Error> {
         return networkRequest.publisher(
             for: .getCategories(endpoint: endpoint,
                                 path: RepositoryPaths.categories.rawValue,
@@ -28,7 +28,7 @@ class MenuStorageRest: MenuRepository {
                using: Void(), decoder: .init())
     }
 
-    func getProducts(for categoryId: Int) -> AnyPublisher<MenuItems, Error> {
+    func getProducts(for categoryId: Int) -> AnyPublisher<Products, Error> {
         return networkRequest.publisher(
             for: .getProducts(endpoint: endpoint,
                               path: RepositoryPaths.products.rawValue,
@@ -40,13 +40,13 @@ class MenuStorageRest: MenuRepository {
     }
 }
 
-extension NetworkRequest where Kind == NetworkRequestKinds.Public, Response == ItemCategories {
+extension NetworkRequest where Kind == NetworkRequestKinds.Public, Response == ProductCategories {
     static func getCategories(endpoint: Endpoint, path: String, queryItems: [URLQueryItem]) -> Self {
         return NetworkRequest(endpoint: endpoint, path: path, queryItems: queryItems)
     }
 }
 
-extension NetworkRequest where Kind == NetworkRequestKinds.Public, Response == MenuItems {
+extension NetworkRequest where Kind == NetworkRequestKinds.Public, Response == Products {
     static func getProducts(endpoint: Endpoint, path: String, queryItems: [URLQueryItem]) -> Self {
         return NetworkRequest(endpoint: endpoint, path: path, queryItems: queryItems)
     }

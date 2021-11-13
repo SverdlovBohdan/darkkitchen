@@ -10,27 +10,27 @@ import SwiftUI
 @testable import DarkKitchen
 
 class MenuInteractorTest: XCTestCase {
-    var menuRepository: MenuRepositoryStub!
+    var menuRepository: ProductsRepositoryStub!
     var menu: MenuInteractor!
 
     var expectation: XCTestExpectation!
     var expectedStates: [MenuState]!
     var incomingStates: [MenuState]!
     var appState: AppState = AppState()
-    var categories: ItemCategories {
+    var categories: ProductCategories {
         return (0..<10).compactMap { id in
-            ItemCategory(id: id, name: "\(id)")
+            ProductCategory(id: id, name: "\(id)")
         }
     }
-    var menuItems: MenuItems {
+    var menuItems: Products {
         categories.compactMap { category in
-            return Item(name: "", price: 0, description: "",
+            return Product(name: "", price: 0, description: "",
                         category: category, main_image: .init(url: ""))
         }
     }
 
-    func configure(categories: AnyPublisher<ItemCategories, Error>,
-                   products: AnyPublisher<MenuItems, Error>,
+    func configure(categories: AnyPublisher<ProductCategories, Error>,
+                   products: AnyPublisher<Products, Error>,
                    setStateHandler: @escaping (AppState) -> Void) {
         menuRepository.getCategoriesPublisher = categories
         menuRepository.getProductsPublisher = products
@@ -45,7 +45,7 @@ class MenuInteractorTest: XCTestCase {
         expectation = XCTestExpectation()
         expectedStates = .init()
         incomingStates = .init()
-        menuRepository = MenuRepositoryStub()
+        menuRepository = ProductsRepositoryStub()
         menu = MenuInteractor(menuRepository: menuRepository)
     }
 

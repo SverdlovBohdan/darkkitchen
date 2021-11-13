@@ -10,26 +10,26 @@ import Combine
 import SwiftUI
 
 class MenuInteractor: CombineInteractor, MenuProvider {
-    typealias Repository = MenuRepository
+    typealias Repository = ProductsRepository
 
     var repository: Repository
     var cancellable: Set<AnyCancellable> = .init()
 
-    init(menuRepository: MenuRepository) {
+    init(menuRepository: ProductsRepository) {
         self.repository = menuRepository
     }
 }
 
-extension MenuProvider where Self: CombineInteractor, Self.Repository == MenuRepository {
+extension MenuProvider where Self: CombineInteractor, Self.Repository == ProductsRepository {
     func getFullMenu(appStateHolder appState: Binding<AppState>) {
         appState.userData.fullMenuState.wrappedValue = .loading
         appState.userData.categoriesState.wrappedValue = .loading
 
         repository.getCategories()
-            .flatMap { categories -> AnyPublisher<[MenuItems], Error> in
+            .flatMap { categories -> AnyPublisher<[Products], Error> in
                 appState.userData.categoriesState.wrappedValue = CategoriesState.loaded(categories)
 
-                return Publishers.MergeMany<AnyPublisher<MenuItems, Error>>(categories.compactMap{ category -> AnyPublisher<MenuItems, Error> in
+                return Publishers.MergeMany<AnyPublisher<Products, Error>>(categories.compactMap{ category -> AnyPublisher<Products, Error> in
                     return self.repository.getProducts(for: category.id)
                 })
                     .collect()

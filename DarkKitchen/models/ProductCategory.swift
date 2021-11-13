@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct ItemCategory: Codable {
+struct ProductCategory: Codable {
     var id: Int
     var name: String
 }
 
-typealias ItemCategories = [ItemCategory]
+typealias ProductCategories = [ProductCategory]

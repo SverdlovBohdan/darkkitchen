@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Item: Codable {
+struct Product: Codable {
     struct ImageUrl: Codable {
         var url: String
     }
@@ -16,8 +16,8 @@ struct Item: Codable {
     var price: Int
     var description: String
 
-    var category: ItemCategory
+    var category: ProductCategory
     var main_image: ImageUrl
 }
 
-typealias MenuItems = [Item]
+typealias Products = [Product]

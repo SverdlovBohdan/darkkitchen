@@ -9,8 +9,8 @@ import Foundation
 import XCTest
 @testable import DarkKitchen
 
-class MenuStorageRestTest: XCTestCase {
-    var repository: MenuStorageRest!
+class ProductsStorageRestTest: XCTestCase {
+    var repository: ProductsStorageRest!
 
     override func setUpWithError() throws {
     }

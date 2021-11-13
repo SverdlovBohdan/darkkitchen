@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 protocol CartInteractor {
-    func addIntem(appState: Binding<AppState>, item: Item)
-    func removeItem(appState: Binding<AppState>, item: Item)
+    func addIntem(appState: Binding<AppState>, item: Product)
+    func removeItem(appState: Binding<AppState>, item: Product)
     func clear(appState: Binding<AppState>)
 }
