@@ -12,4 +12,5 @@ struct UserData {
     var ordersState: OrdersState
     var pushOrderState: PushOrderState
     var categoriesState: CategoriesState
+    var tokenState: TokenState
 }

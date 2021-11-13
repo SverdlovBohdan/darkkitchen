@@ -10,4 +10,6 @@ import Foundation
 enum RepositoryError: Error {
     case PushDataError
     case InternalError
+    case ResourceNotFound
+    case ConvertError
 }

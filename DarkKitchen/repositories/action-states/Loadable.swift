@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// State wrapper for resource which can be loaded
 enum Loadable<Resource> {
     case idle
     case loading

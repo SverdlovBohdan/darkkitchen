@@ -10,5 +10,5 @@ import Combine
 
 protocol TokenRepository {
     func getToken() -> AnyPublisher<String, Error>
-    func setToken(_ token: String) -> AnyPublisher<Void, Error>
+    func setToken(_ token: String) -> AnyPublisher<String, Error>
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// State wrapper for resource which can be pushed
 enum Pushable<Resource> {
     case idle
     case pushing(Resource)
@@ -22,7 +23,7 @@ extension Pushable: CustomStringConvertible {
         case .pushing(_):
             return "pushing"
         case .pushed:
-            return "loaded"
+            return "pushed"
         case .failed(_, _):
             return "failed"
         }

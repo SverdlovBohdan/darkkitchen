@@ -16,11 +16,22 @@
 		0E201D612729E6AF0093DFF7 /* Pushable+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E201D602729E6AF0093DFF7 /* Pushable+Equatable.swift */; };
 		0E36099E273FD60400A62EFD /* AuthenticationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E36099D273FD60400A62EFD /* AuthenticationResponse.swift */; };
 		0E3609A0273FDA1C00A62EFD /* AuthenticationRequestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E36099F273FDA1C00A62EFD /* AuthenticationRequestData.swift */; };
-		0E3609A2273FDB1B00A62EFD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609A1273FDB1B00A62EFD /* User.swift */; };
+		0E3609A2273FDB1B00A62EFD /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609A1273FDB1B00A62EFD /* Client.swift */; };
 		0E3609A4273FDC5900A62EFD /* AuthenticationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609A3273FDC5900A62EFD /* AuthenticationState.swift */; };
 		0E3609A62740171B00A62EFD /* TokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609A52740171B00A62EFD /* TokenRepository.swift */; };
 		0E3609A82740183B00A62EFD /* TokenStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609A72740183B00A62EFD /* TokenStorage.swift */; };
 		0E3609AA27401B2000A62EFD /* TokenStorageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609A927401B2000A62EFD /* TokenStorageTest.swift */; };
+		0E3609AC274029D300A62EFD /* TokenProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609AB274029D300A62EFD /* TokenProvidable.swift */; };
+		0E3609AE27402DAD00A62EFD /* TokenReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609AD27402DAD00A62EFD /* TokenReader.swift */; };
+		0E3609B027402E5B00A62EFD /* AuthentificationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609AF27402E5B00A62EFD /* AuthentificationInteractor.swift */; };
+		0E3609B4274035BD00A62EFD /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609B3274035BD00A62EFD /* Authentication.swift */; };
+		0E3609B62740389400A62EFD /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609B52740389400A62EFD /* AccountRepository.swift */; };
+		0E3609B8274038DD00A62EFD /* AccountStorageRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609B7274038DD00A62EFD /* AccountStorageRest.swift */; };
+		0E3609BA27403B7C00A62EFD /* ProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609B927403B7C00A62EFD /* ProfileRepository.swift */; };
+		0E3609BC27403C1C00A62EFD /* ProfileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609BB27403C1C00A62EFD /* ProfileStorage.swift */; };
+		0E3609BE27404B8700A62EFD /* ProfileStorageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609BD27404B8700A62EFD /* ProfileStorageTest.swift */; };
+		0E3609C027405A0F00A62EFD /* ProfileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609BF27405A0F00A62EFD /* ProfileProvider.swift */; };
+		0E3609C227405D5200A62EFD /* Movable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609C127405D5200A62EFD /* Movable.swift */; };
 		0E3B540726F7A4E300DE526C /* DarkKitchenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3B540626F7A4E300DE526C /* DarkKitchenApp.swift */; };
 		0E3B540926F7A4E300DE526C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3B540826F7A4E300DE526C /* ContentView.swift */; };
 		0E3B540B26F7A4E700DE526C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3B540A26F7A4E700DE526C /* Assets.xcassets */; };
@@ -80,11 +91,22 @@
 		0E201D602729E6AF0093DFF7 /* Pushable+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pushable+Equatable.swift"; sourceTree = "<group>"; };
 		0E36099D273FD60400A62EFD /* AuthenticationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationResponse.swift; sourceTree = "<group>"; };
 		0E36099F273FDA1C00A62EFD /* AuthenticationRequestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRequestData.swift; sourceTree = "<group>"; };
-		0E3609A1273FDB1B00A62EFD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0E3609A1273FDB1B00A62EFD /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		0E3609A3273FDC5900A62EFD /* AuthenticationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationState.swift; sourceTree = "<group>"; };
 		0E3609A52740171B00A62EFD /* TokenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRepository.swift; sourceTree = "<group>"; };
 		0E3609A72740183B00A62EFD /* TokenStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStorage.swift; sourceTree = "<group>"; };
 		0E3609A927401B2000A62EFD /* TokenStorageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStorageTest.swift; sourceTree = "<group>"; };
+		0E3609AB274029D300A62EFD /* TokenProvidable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenProvidable.swift; sourceTree = "<group>"; };
+		0E3609AD27402DAD00A62EFD /* TokenReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenReader.swift; sourceTree = "<group>"; };
+		0E3609AF27402E5B00A62EFD /* AuthentificationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationInteractor.swift; sourceTree = "<group>"; };
+		0E3609B3274035BD00A62EFD /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		0E3609B52740389400A62EFD /* AccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepository.swift; sourceTree = "<group>"; };
+		0E3609B7274038DD00A62EFD /* AccountStorageRest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountStorageRest.swift; sourceTree = "<group>"; };
+		0E3609B927403B7C00A62EFD /* ProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepository.swift; sourceTree = "<group>"; };
+		0E3609BB27403C1C00A62EFD /* ProfileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStorage.swift; sourceTree = "<group>"; };
+		0E3609BD27404B8700A62EFD /* ProfileStorageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStorageTest.swift; sourceTree = "<group>"; };
+		0E3609BF27405A0F00A62EFD /* ProfileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProvider.swift; sourceTree = "<group>"; };
+		0E3609C127405D5200A62EFD /* Movable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movable.swift; sourceTree = "<group>"; };
 		0E3B540326F7A4E300DE526C /* DarkKitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkKitchen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E3B540626F7A4E300DE526C /* DarkKitchenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkKitchenApp.swift; sourceTree = "<group>"; };
 		0E3B540826F7A4E300DE526C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -150,6 +172,9 @@
 			children = (
 				0E36099D273FD60400A62EFD /* AuthenticationResponse.swift */,
 				0E36099F273FDA1C00A62EFD /* AuthenticationRequestData.swift */,
+				0E3609AB274029D300A62EFD /* TokenProvidable.swift */,
+				0E3609AD27402DAD00A62EFD /* TokenReader.swift */,
+				0E3609B3274035BD00A62EFD /* Authentication.swift */,
 			);
 			path = auth;
 			sourceTree = "<group>";
@@ -222,6 +247,7 @@
 				0E44073C272347C700632B5F /* MenuState.swift */,
 				0E201D5C2729DCD80093DFF7 /* OrdersState.swift */,
 				0E3609A3273FDC5900A62EFD /* AuthenticationState.swift */,
+				0E3609C127405D5200A62EFD /* Movable.swift */,
 			);
 			path = "action-states";
 			sourceTree = "<group>";
@@ -238,6 +264,7 @@
 				0EA84BFC2739C044001E8B33 /* UrlResponderMock.swift.swift */,
 				0EA84BFE2739C375001E8B33 /* ProductsStorageRestTest.swift */,
 				0E3609A927401B2000A62EFD /* TokenStorageTest.swift */,
+				0E3609BD27404B8700A62EFD /* ProfileStorageTest.swift */,
 			);
 			path = DarkKitchenTests;
 			sourceTree = "<group>";
@@ -281,6 +308,10 @@
 				0EC797D627333796006C45F8 /* RepositoryPaths.swift */,
 				0E3609A52740171B00A62EFD /* TokenRepository.swift */,
 				0E3609A72740183B00A62EFD /* TokenStorage.swift */,
+				0E3609B52740389400A62EFD /* AccountRepository.swift */,
+				0E3609B7274038DD00A62EFD /* AccountStorageRest.swift */,
+				0E3609B927403B7C00A62EFD /* ProfileRepository.swift */,
+				0E3609BB27403C1C00A62EFD /* ProfileStorage.swift */,
 			);
 			path = repositories;
 			sourceTree = "<group>";
@@ -296,6 +327,8 @@
 				0E8B136626FA554E006D36D5 /* OrdersInteractor.swift */,
 				0E201D582729DBE00093DFF7 /* OrdersProvider.swift */,
 				0E8B136426FA552B006D36D5 /* ProfileInteractor.swift */,
+				0E3609AF27402E5B00A62EFD /* AuthentificationInteractor.swift */,
+				0E3609BF27405A0F00A62EFD /* ProfileProvider.swift */,
 			);
 			path = business;
 			sourceTree = "<group>";
@@ -320,7 +353,7 @@
 				0E8B135A26FA4E53006D36D5 /* Profile.swift */,
 				0E8B136C26FA56F8006D36D5 /* PushOrderResult.swift */,
 				0ED5D2D6273D8882009D48EE /* ProductCategory.swift */,
-				0E3609A1273FDB1B00A62EFD /* User.swift */,
+				0E3609A1273FDB1B00A62EFD /* Client.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -431,9 +464,11 @@
 				0E8B137826FA5BAA006D36D5 /* GlobalObjects.swift in Sources */,
 				0E3B540926F7A4E300DE526C /* ContentView.swift in Sources */,
 				0E8B136D26FA56F8006D36D5 /* PushOrderResult.swift in Sources */,
+				0E3609B8274038DD00A62EFD /* AccountStorageRest.swift in Sources */,
 				0E4C32C7272E990700AA5F06 /* NetworkRequest.swift in Sources */,
 				0E3609A0273FDA1C00A62EFD /* AuthenticationRequestData.swift in Sources */,
 				0E201D5D2729DCD80093DFF7 /* OrdersState.swift in Sources */,
+				0E3609AE27402DAD00A62EFD /* TokenReader.swift in Sources */,
 				0EFDA370272F336500FDA504 /* Configuration.swift in Sources */,
 				0E8B135B26FA4E53006D36D5 /* Profile.swift in Sources */,
 				0E8B136126FA53CE006D36D5 /* AppState.swift in Sources */,
@@ -441,7 +476,7 @@
 				0E8B135726FA4E34006D36D5 /* Cart.swift in Sources */,
 				0E3609A62740171B00A62EFD /* TokenRepository.swift in Sources */,
 				0E8B136326FA5467006D36D5 /* CartInteractor.swift in Sources */,
-				0E3609A2273FDB1B00A62EFD /* User.swift in Sources */,
+				0E3609A2273FDB1B00A62EFD /* Client.swift in Sources */,
 				0EC797D727333796006C45F8 /* RepositoryPaths.swift in Sources */,
 				0E8B136726FA554E006D36D5 /* OrdersInteractor.swift in Sources */,
 				0ECBDACC271DF046007C9693 /* UserData.swift in Sources */,
@@ -449,15 +484,23 @@
 				0E4E61FD272420F500E11DDC /* MenuProvider.swift in Sources */,
 				0E44073D272347C700632B5F /* MenuState.swift in Sources */,
 				0E8B136926FA560F006D36D5 /* ProductsRepository.swift in Sources */,
+				0E3609AC274029D300A62EFD /* TokenProvidable.swift in Sources */,
 				0E36099E273FD60400A62EFD /* AuthenticationResponse.swift in Sources */,
 				0E440750272358A000632B5F /* RepositoryError.swift in Sources */,
 				0E3609A82740183B00A62EFD /* TokenStorage.swift in Sources */,
+				0E3609B027402E5B00A62EFD /* AuthentificationInteractor.swift in Sources */,
+				0E3609C227405D5200A62EFD /* Movable.swift in Sources */,
 				0E201D5F2729E0130093DFF7 /* Pushable.swift in Sources */,
 				0EF0C4ED272B2C78004092CF /* ProductsStorageRest.swift in Sources */,
 				0E8B136B26FA5675006D36D5 /* OrdersRepository.swift in Sources */,
+				0E3609BA27403B7C00A62EFD /* ProfileRepository.swift in Sources */,
 				0E201D5B2729DC080093DFF7 /* OrderSender.swift in Sources */,
 				0E3B540726F7A4E300DE526C /* DarkKitchenApp.swift in Sources */,
+				0E3609B62740389400A62EFD /* AccountRepository.swift in Sources */,
 				0ECBDACA271DF039007C9693 /* Loadable.swift in Sources */,
+				0E3609B4274035BD00A62EFD /* Authentication.swift in Sources */,
+				0E3609BC27403C1C00A62EFD /* ProfileStorage.swift in Sources */,
+				0E3609C027405A0F00A62EFD /* ProfileProvider.swift in Sources */,
 				0E201D592729DBE00093DFF7 /* OrdersProvider.swift in Sources */,
 				0EF0C4EF272B2E97004092CF /* OrdersStorageRest.swift in Sources */,
 				0E8B135F26FA4F0F006D36D5 /* MenuInteractor+MenuProvider.swift in Sources */,
@@ -476,6 +519,7 @@
 				0EF0C4EB272B1C3D004092CF /* OrderInteractorTests.swift in Sources */,
 				0E44074E2723538200632B5F /* ProductsRepositoryStub.swift in Sources */,
 				0E3609AA27401B2000A62EFD /* TokenStorageTest.swift in Sources */,
+				0E3609BE27404B8700A62EFD /* ProfileStorageTest.swift in Sources */,
 				0EF0C4F1272B3272004092CF /* AppStateTest.swift in Sources */,
 				0E201D612729E6AF0093DFF7 /* Pushable+Equatable.swift in Sources */,
 				0EA84BFD2739C044001E8B33 /* UrlResponderMock.swift.swift in Sources */,

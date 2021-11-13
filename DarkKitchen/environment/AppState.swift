@@ -8,9 +8,19 @@
 import Foundation
 import SwiftUI
 
-class AppState: ObservableObject {
+class AppState: ObservableObject, TokenProvidable {
     @Published var userData: UserData = UserData(fullMenuState: .idle,
                                                  ordersState: .idle,
                                                  pushOrderState: .idle,
-                                                 categoriesState: .idle)
+                                                 categoriesState: .idle,
+                                                 tokenState: .absent)
+
+    var token: String? {
+        switch userData.tokenState {
+        case .absent:
+            return nil
+        case .exist(let token):
+            return token
+        }
+    }
 }

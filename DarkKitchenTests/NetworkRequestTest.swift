@@ -10,7 +10,7 @@ import Combine
 @testable import DarkKitchen
 
 struct ResponseStub: Codable {
-    var id: UUID = .init()
+    var id: Int = 1
 }
 
 extension XCTestCase {
@@ -122,7 +122,7 @@ class NetworkRequestTest: XCTestCase {
             path: "endpoint")
         let responder: UrlProtocolMock = .init()
         UrlProtocolMock.statusCode = 200
-        UrlProtocolMock.data = try JSONEncoder().encode(NetworkResponse(result: ResponseStub()))
+        UrlProtocolMock.data = try JSONEncoder().encode(ResponseStub())
         let urlSession: URLSession = URLSession(mockResponder: responder)
         let result = try awaitCompletion(of: urlSession.publisher(for: request, using: Void()))
         XCTAssertFalse(result.isEmpty)
@@ -145,7 +145,7 @@ class NetworkRequestTest: XCTestCase {
         let responder: UrlProtocolMock = .init()
         for i in 403..<600 {
             UrlProtocolMock.statusCode = i
-            UrlProtocolMock.data = try JSONEncoder().encode(NetworkResponse(result: ResponseStub()))
+            UrlProtocolMock.data = try JSONEncoder().encode(ResponseStub())
             let urlSession: URLSession = URLSession(mockResponder: responder)
             XCTAssertThrowsError(try awaitCompletion(of: urlSession.publisher(for: request, using: Void())))
         }

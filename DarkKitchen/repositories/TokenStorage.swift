@@ -23,9 +23,9 @@ class TokenStorage: TokenRepository {
             .eraseToAnyPublisher()
     }
 
-    func setToken(_ token: String) -> AnyPublisher<Void, Error> {
+    func setToken(_ token: String) -> AnyPublisher<String, Error> {
         defaults.set(token, forKey: TokenStorage.TOKEN_KEY)
-        return Just(Void())
+        return Just(token)
             .setFailureType(to: Error.self)
             .eraseToAnyPublisher()
     }

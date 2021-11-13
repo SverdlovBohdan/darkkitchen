@@ -7,4 +7,6 @@
 
 import Foundation
 
-struct Profile {}
+struct Profile {
+    var user: Client
+}
