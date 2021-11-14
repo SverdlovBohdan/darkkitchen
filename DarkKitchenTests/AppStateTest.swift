@@ -22,5 +22,12 @@ class AppStateTest: XCTestCase {
         XCTAssertEqual(appState.userData.pushOrderState, .idle)
         XCTAssertEqual(appState.userData.ordersState, .idle)
         XCTAssertEqual(appState.userData.fullMenuState, .idle)
+        XCTAssertEqual(appState.userData.tokenState, .absent)
+    }
+
+    func testCanProvideToken() throws {
+        XCTAssertNil(appState.token)
+        appState.userData.tokenState = .exist(token: "1234")
+        XCTAssertNotNil(appState.token)
     }
 }

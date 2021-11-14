@@ -13,7 +13,7 @@ class ProfileStorage: ProfileRepository {
     private let defaults: UserDefaults = UserDefaults.standard
 
     func saveProfile(for user: Client) -> AnyPublisher<Client, Error> {
-        guard let data: Data = try? JSONEncoder().encode(user) else {
+        guard let data: Data = encodeToJson(user) else {
             return Fail(error: RepositoryError.ConvertError)
                 .eraseToAnyPublisher()
         }
@@ -30,7 +30,7 @@ class ProfileStorage: ProfileRepository {
                       .eraseToAnyPublisher()
               }
 
-        guard let user = try? JSONDecoder().decode(Client.self, from: data) else {
+        guard let user = decodeToJson(data) else {
             return Fail(error: RepositoryError.ConvertError)
                 .eraseToAnyPublisher()
         }
@@ -40,13 +40,16 @@ class ProfileStorage: ProfileRepository {
             .eraseToAnyPublisher()
     }
 
-    /// For tests only
+    // MARK: For tests only
     func cleanUp() {
         defaults.removeObject(forKey: ProfileStorage.PROFILE_KEY)
     }
 
-    /// For tests only
-    func saveCustomString(_ text: String) {
-        defaults.set(text, forKey: ProfileStorage.PROFILE_KEY)
+    func encodeToJson(_ user: Client) -> Data? {
+        return try? JSONEncoder().encode(user)
+    }
+
+    func decodeToJson(_ data: Data) -> Client? {
+        return try? JSONDecoder().decode(Client.self, from: data)
     }
 }

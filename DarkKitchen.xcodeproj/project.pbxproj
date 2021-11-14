@@ -32,6 +32,7 @@
 		0E3609BE27404B8700A62EFD /* ProfileStorageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609BD27404B8700A62EFD /* ProfileStorageTest.swift */; };
 		0E3609C027405A0F00A62EFD /* ProfileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609BF27405A0F00A62EFD /* ProfileProvider.swift */; };
 		0E3609C227405D5200A62EFD /* Movable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609C127405D5200A62EFD /* Movable.swift */; };
+		0E3609C42740798F00A62EFD /* TokenState+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609C32740798F00A62EFD /* TokenState+Equatable.swift */; };
 		0E3B540726F7A4E300DE526C /* DarkKitchenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3B540626F7A4E300DE526C /* DarkKitchenApp.swift */; };
 		0E3B540926F7A4E300DE526C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3B540826F7A4E300DE526C /* ContentView.swift */; };
 		0E3B540B26F7A4E700DE526C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3B540A26F7A4E700DE526C /* Assets.xcassets */; };
@@ -57,6 +58,9 @@
 		0E8B136B26FA5675006D36D5 /* OrdersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B136A26FA5675006D36D5 /* OrdersRepository.swift */; };
 		0E8B136D26FA56F8006D36D5 /* PushOrderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B136C26FA56F8006D36D5 /* PushOrderResult.swift */; };
 		0E8B137826FA5BAA006D36D5 /* GlobalObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B137726FA5BAA006D36D5 /* GlobalObjects.swift */; };
+		0E9A409F27412B9C00B5FF27 /* ProfileRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9A409E27412B9C00B5FF27 /* ProfileRepositoryStub.swift */; };
+		0E9A40A1274131D400B5FF27 /* AccountRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9A40A0274131D400B5FF27 /* AccountRepositoryStub.swift */; };
+		0E9A40A32741324800B5FF27 /* ProfileInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9A40A22741324700B5FF27 /* ProfileInteractorTest.swift */; };
 		0EA84BFD2739C044001E8B33 /* UrlResponderMock.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA84BFC2739C044001E8B33 /* UrlResponderMock.swift.swift */; };
 		0EA84BFF2739C375001E8B33 /* ProductsStorageRestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA84BFE2739C375001E8B33 /* ProductsStorageRestTest.swift */; };
 		0EC797D727333796006C45F8 /* RepositoryPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC797D627333796006C45F8 /* RepositoryPaths.swift */; };
@@ -107,6 +111,7 @@
 		0E3609BD27404B8700A62EFD /* ProfileStorageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStorageTest.swift; sourceTree = "<group>"; };
 		0E3609BF27405A0F00A62EFD /* ProfileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProvider.swift; sourceTree = "<group>"; };
 		0E3609C127405D5200A62EFD /* Movable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movable.swift; sourceTree = "<group>"; };
+		0E3609C32740798F00A62EFD /* TokenState+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TokenState+Equatable.swift"; sourceTree = "<group>"; };
 		0E3B540326F7A4E300DE526C /* DarkKitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkKitchen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E3B540626F7A4E300DE526C /* DarkKitchenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkKitchenApp.swift; sourceTree = "<group>"; };
 		0E3B540826F7A4E300DE526C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -135,6 +140,9 @@
 		0E8B136A26FA5675006D36D5 /* OrdersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersRepository.swift; sourceTree = "<group>"; };
 		0E8B136C26FA56F8006D36D5 /* PushOrderResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushOrderResult.swift; sourceTree = "<group>"; };
 		0E8B137726FA5BAA006D36D5 /* GlobalObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalObjects.swift; sourceTree = "<group>"; };
+		0E9A409E27412B9C00B5FF27 /* ProfileRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepositoryStub.swift; sourceTree = "<group>"; };
+		0E9A40A0274131D400B5FF27 /* AccountRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepositoryStub.swift; sourceTree = "<group>"; };
+		0E9A40A22741324700B5FF27 /* ProfileInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractorTest.swift; sourceTree = "<group>"; };
 		0EA84BFC2739C044001E8B33 /* UrlResponderMock.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlResponderMock.swift.swift; sourceTree = "<group>"; };
 		0EA84BFE2739C375001E8B33 /* ProductsStorageRestTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsStorageRestTest.swift; sourceTree = "<group>"; };
 		0EC797D627333796006C45F8 /* RepositoryPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryPaths.swift; sourceTree = "<group>"; };
@@ -265,6 +273,7 @@
 				0EA84BFE2739C375001E8B33 /* ProductsStorageRestTest.swift */,
 				0E3609A927401B2000A62EFD /* TokenStorageTest.swift */,
 				0E3609BD27404B8700A62EFD /* ProfileStorageTest.swift */,
+				0E9A40A22741324700B5FF27 /* ProfileInteractorTest.swift */,
 			);
 			path = DarkKitchenTests;
 			sourceTree = "<group>";
@@ -274,6 +283,8 @@
 			children = (
 				0E44074D2723538200632B5F /* ProductsRepositoryStub.swift */,
 				0EF0C4E8272B1A82004092CF /* OrdersRepositoryStub.swift */,
+				0E9A409E27412B9C00B5FF27 /* ProfileRepositoryStub.swift */,
+				0E9A40A0274131D400B5FF27 /* AccountRepositoryStub.swift */,
 			);
 			path = stubs;
 			sourceTree = "<group>";
@@ -291,6 +302,7 @@
 			children = (
 				0E4E61FA27241AA000E11DDC /* Loadable+Equatable.swift */,
 				0E201D602729E6AF0093DFF7 /* Pushable+Equatable.swift */,
+				0E3609C32740798F00A62EFD /* TokenState+Equatable.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -319,6 +331,7 @@
 		0E8B135126FA4DBC006D36D5 /* business */ = {
 			isa = PBXGroup;
 			children = (
+				0E3609AF27402E5B00A62EFD /* AuthentificationInteractor.swift */,
 				0E8B136226FA5467006D36D5 /* CartInteractor.swift */,
 				0E201D562729D7630093DFF7 /* CombineInteractor.swift */,
 				0E8B135E26FA4F0F006D36D5 /* MenuInteractor+MenuProvider.swift */,
@@ -327,7 +340,6 @@
 				0E8B136626FA554E006D36D5 /* OrdersInteractor.swift */,
 				0E201D582729DBE00093DFF7 /* OrdersProvider.swift */,
 				0E8B136426FA552B006D36D5 /* ProfileInteractor.swift */,
-				0E3609AF27402E5B00A62EFD /* AuthentificationInteractor.swift */,
 				0E3609BF27405A0F00A62EFD /* ProfileProvider.swift */,
 			);
 			path = business;
@@ -516,10 +528,14 @@
 			files = (
 				0EA84BFF2739C375001E8B33 /* ProductsStorageRestTest.swift in Sources */,
 				0E4E61FB27241AA000E11DDC /* Loadable+Equatable.swift in Sources */,
+				0E9A40A32741324800B5FF27 /* ProfileInteractorTest.swift in Sources */,
 				0EF0C4EB272B1C3D004092CF /* OrderInteractorTests.swift in Sources */,
 				0E44074E2723538200632B5F /* ProductsRepositoryStub.swift in Sources */,
+				0E9A40A1274131D400B5FF27 /* AccountRepositoryStub.swift in Sources */,
 				0E3609AA27401B2000A62EFD /* TokenStorageTest.swift in Sources */,
 				0E3609BE27404B8700A62EFD /* ProfileStorageTest.swift in Sources */,
+				0E3609C42740798F00A62EFD /* TokenState+Equatable.swift in Sources */,
+				0E9A409F27412B9C00B5FF27 /* ProfileRepositoryStub.swift in Sources */,
 				0EF0C4F1272B3272004092CF /* AppStateTest.swift in Sources */,
 				0E201D612729E6AF0093DFF7 /* Pushable+Equatable.swift in Sources */,
 				0EA84BFD2739C044001E8B33 /* UrlResponderMock.swift.swift in Sources */,

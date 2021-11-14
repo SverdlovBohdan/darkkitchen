@@ -34,4 +34,13 @@ extension Movable: CustomStringConvertible {
             return "push failed"
         }
     }
+
+    var resource: Resource? {
+        switch self {
+        case .loaded(let resource):
+            return resource
+        default:
+            return nil
+        }
+    }
 }
