@@ -10,7 +10,7 @@ import SwiftUI
 import Combine
 
 class AuthentificationInteractor: TokenReader, Authentication {
-    let tokenRepository: TokenRepository
+    private let tokenRepository: TokenRepository
     var cancellable: Set<AnyCancellable> = .init()
 
     init(tokenRepository: TokenRepository) {

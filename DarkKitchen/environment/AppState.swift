@@ -13,7 +13,8 @@ class AppState: ObservableObject, TokenProvidable {
                                                  ordersState: .idle,
                                                  pushOrderState: .idle,
                                                  categoriesState: .idle,
-                                                 tokenState: .absent)
+                                                 tokenState: .absent,
+                                                 profileState: .idle)
 
     var token: String? {
         switch userData.tokenState {
