@@ -13,6 +13,24 @@ enum TokenState {
 }
 
 extension TokenState: CustomStringConvertible {
+    var isTokenExist: Bool {
+        switch self {
+        case .exist(_):
+            return true
+        default:
+            return false
+        }
+    }
+
+    var token: String? {
+        switch self {
+        case .exist(let token):
+            return token
+        default:
+            return nil
+        }
+    }
+
     var description: String {
         switch self {
         case .absent:

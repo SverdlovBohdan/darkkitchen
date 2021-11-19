@@ -14,7 +14,7 @@ class TokenStorage: TokenRepository {
 
     func getToken() -> AnyPublisher<String, Error> {
         guard let token = defaults.object(forKey: TokenStorage.TOKEN_KEY) as? String else {
-            return Fail(error: RepositoryError.PushDataError)
+            return Fail(error: RepositoryError.ResourceNotFound)
                 .eraseToAnyPublisher()
         }
 

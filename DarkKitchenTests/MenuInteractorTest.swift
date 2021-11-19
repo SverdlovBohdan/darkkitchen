@@ -60,12 +60,12 @@ class MenuInteractorTest: XCTestCase {
                     .setFailureType(to: Error.self)
                     .eraseToAnyPublisher(),
                   setStateHandler: { state in
-            switch state.userData.fullMenuState {
+            switch state.fullMenuState {
             case .loaded(_):
-                print("\(state.userData.fullMenuState)")
+                print("\(state.fullMenuState)")
                 self.expectation.fulfill()
             default:
-                print("\(state.userData.fullMenuState)")
+                print("\(state.fullMenuState)")
             }
 
             self.appState = state
@@ -84,12 +84,12 @@ class MenuInteractorTest: XCTestCase {
                     .setFailureType(to: Error.self)
                     .eraseToAnyPublisher(),
                   setStateHandler: { state in
-            switch state.userData.fullMenuState {
+            switch state.fullMenuState {
             case .failed(_):
-                print("\(state.userData.fullMenuState)")
+                print("\(state.fullMenuState)")
                 self.expectation.fulfill()
             default:
-                print("\(state.userData.fullMenuState)")
+                print("\(state.fullMenuState)")
             }
 
             self.appState = state
@@ -106,12 +106,12 @@ class MenuInteractorTest: XCTestCase {
                   products: Fail(error: NetworkError.unknown)
                     .eraseToAnyPublisher(),
                   setStateHandler: { state in
-            switch state.userData.fullMenuState {
+            switch state.fullMenuState {
             case .failed(_):
-                print("\(state.userData.fullMenuState)")
+                print("\(state.fullMenuState)")
                 self.expectation.fulfill()
             default:
-                print("\(state.userData.fullMenuState)")
+                print("\(state.fullMenuState)")
             }
 
             self.appState = state

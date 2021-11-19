@@ -35,6 +35,33 @@ extension Movable: CustomStringConvertible {
         }
     }
 
+    var isIdle: Bool {
+        switch self {
+        case .idle:
+            return true
+        default:
+            return false
+        }
+    }
+
+    var isProcessing: Bool {
+        switch self {
+        case .processing:
+            return true
+        default:
+            return false
+        }
+    }
+
+    var isError: Bool {
+        switch self {
+        case .loadFailed(_), .pushFailed(_, _):
+            return true
+        default:
+            return false
+        }
+    }
+
     var resource: Resource? {
         switch self {
         case .loaded(let resource):

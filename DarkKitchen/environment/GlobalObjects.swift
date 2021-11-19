@@ -12,8 +12,8 @@ import SwiftUI
 public struct GlobalObjectsContainer {
     var appState: AppState!
 
-    var menuRepository: ProductsStorageRest!
-    var ordersRepository: OrdersStorageRest!
+    var menuRepository: ProductsRepository!
+    var ordersRepository: OrdersRepository!
     var accountRepository: AccountRepository!
     var profileRepository: ProfileRepository!
     var tokenRepository: TokenRepository!
@@ -25,7 +25,9 @@ public struct GlobalObjectsContainer {
 }
 
 extension GlobalObjectsContainer {
-    static var development: GlobalObjectsContainer {
+    static var development: GlobalObjectsContainer = {
+        print("Create GlobalObjectsContainer.development")
+
         /// Stubs
         let network = NetworkRequestStub()
         network.accountPublisher = Just(Client(name: "testClient", phone: "+000 000 00000",
@@ -47,7 +49,6 @@ extension GlobalObjectsContainer {
 
         ///  Application globals.
         let appState: AppState = AppState()
-
         let menuStorage = ProductsStorageRest(endpoint: EndpointConfiguration.test,
                                               networkRequest: network)
         let ordersStorage = OrdersStorageRest(endpoint: EndpointConfiguration.test,
@@ -76,7 +77,7 @@ extension GlobalObjectsContainer {
                      ordersInteractor: orders,
                      authInteractor: auth,
                      profileInteractor: profile)
-    }
+    }()
 }
 
 private struct GlobalObjects: EnvironmentKey {

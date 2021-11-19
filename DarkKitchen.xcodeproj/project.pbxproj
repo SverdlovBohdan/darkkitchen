@@ -35,7 +35,7 @@
 		0E3609BE27404B8700A62EFD /* ProfileStorageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609BD27404B8700A62EFD /* ProfileStorageTest.swift */; };
 		0E3609C027405A0F00A62EFD /* ProfileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609BF27405A0F00A62EFD /* ProfileProvider.swift */; };
 		0E3609C227405D5200A62EFD /* Movable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609C127405D5200A62EFD /* Movable.swift */; };
-		0E3609C42740798F00A62EFD /* TokenState+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609C32740798F00A62EFD /* TokenState+Equatable.swift */; };
+		0E3609C42740798F00A62EFD /* Movable+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3609C32740798F00A62EFD /* Movable+Equatable.swift */; };
 		0E3B540726F7A4E300DE526C /* DarkKitchenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3B540626F7A4E300DE526C /* DarkKitchenApp.swift */; };
 		0E3B540926F7A4E300DE526C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3B540826F7A4E300DE526C /* MainView.swift */; };
 		0E3B540B26F7A4E700DE526C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3B540A26F7A4E700DE526C /* Assets.xcassets */; };
@@ -61,6 +61,7 @@
 		0E8B136B26FA5675006D36D5 /* OrdersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B136A26FA5675006D36D5 /* OrdersRepository.swift */; };
 		0E8B136D26FA56F8006D36D5 /* PushOrderResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B136C26FA56F8006D36D5 /* PushOrderResult.swift */; };
 		0E8B137826FA5BAA006D36D5 /* GlobalObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8B137726FA5BAA006D36D5 /* GlobalObjects.swift */; };
+		0E98632C27480972003FBFDE /* TokenState+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E98632B27480972003FBFDE /* TokenState+Equatable.swift */; };
 		0E9A409F27412B9C00B5FF27 /* ProfileRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9A409E27412B9C00B5FF27 /* ProfileRepositoryStub.swift */; };
 		0E9A40A1274131D400B5FF27 /* AccountRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9A40A0274131D400B5FF27 /* AccountRepositoryStub.swift */; };
 		0E9A40A32741324800B5FF27 /* ProfileInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9A40A22741324700B5FF27 /* ProfileInteractorTest.swift */; };
@@ -68,7 +69,6 @@
 		0EA84BFF2739C375001E8B33 /* ProductsStorageRestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA84BFE2739C375001E8B33 /* ProductsStorageRestTest.swift */; };
 		0EC797D727333796006C45F8 /* RepositoryPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC797D627333796006C45F8 /* RepositoryPaths.swift */; };
 		0ECBDACA271DF039007C9693 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECBDAC9271DF039007C9693 /* Loadable.swift */; };
-		0ECBDACC271DF046007C9693 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECBDACB271DF046007C9693 /* UserData.swift */; };
 		0ED5D2D7273D8883009D48EE /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED5D2D6273D8882009D48EE /* ProductCategory.swift */; };
 		0EF0C4E9272B1A82004092CF /* OrdersRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF0C4E8272B1A82004092CF /* OrdersRepositoryStub.swift */; };
 		0EF0C4EB272B1C3D004092CF /* OrderInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF0C4EA272B1C3D004092CF /* OrderInteractorTests.swift */; };
@@ -132,7 +132,7 @@
 		0E3609BD27404B8700A62EFD /* ProfileStorageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStorageTest.swift; sourceTree = "<group>"; };
 		0E3609BF27405A0F00A62EFD /* ProfileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProvider.swift; sourceTree = "<group>"; };
 		0E3609C127405D5200A62EFD /* Movable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movable.swift; sourceTree = "<group>"; };
-		0E3609C32740798F00A62EFD /* TokenState+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TokenState+Equatable.swift"; sourceTree = "<group>"; };
+		0E3609C32740798F00A62EFD /* Movable+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movable+Equatable.swift"; sourceTree = "<group>"; };
 		0E3B540326F7A4E300DE526C /* DarkKitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DarkKitchen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E3B540626F7A4E300DE526C /* DarkKitchenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkKitchenApp.swift; sourceTree = "<group>"; };
 		0E3B540826F7A4E300DE526C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -161,6 +161,7 @@
 		0E8B136A26FA5675006D36D5 /* OrdersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersRepository.swift; sourceTree = "<group>"; };
 		0E8B136C26FA56F8006D36D5 /* PushOrderResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushOrderResult.swift; sourceTree = "<group>"; };
 		0E8B137726FA5BAA006D36D5 /* GlobalObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalObjects.swift; sourceTree = "<group>"; };
+		0E98632B27480972003FBFDE /* TokenState+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TokenState+Equatable.swift"; sourceTree = "<group>"; };
 		0E9A409E27412B9C00B5FF27 /* ProfileRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepositoryStub.swift; sourceTree = "<group>"; };
 		0E9A40A0274131D400B5FF27 /* AccountRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepositoryStub.swift; sourceTree = "<group>"; };
 		0E9A40A22741324700B5FF27 /* ProfileInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractorTest.swift; sourceTree = "<group>"; };
@@ -168,7 +169,6 @@
 		0EA84BFE2739C375001E8B33 /* ProductsStorageRestTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsStorageRestTest.swift; sourceTree = "<group>"; };
 		0EC797D627333796006C45F8 /* RepositoryPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryPaths.swift; sourceTree = "<group>"; };
 		0ECBDAC9271DF039007C9693 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
-		0ECBDACB271DF046007C9693 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		0ED5D2D6273D8882009D48EE /* ProductCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
 		0EF0C4E8272B1A82004092CF /* OrdersRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersRepositoryStub.swift; sourceTree = "<group>"; };
 		0EF0C4EA272B1C3D004092CF /* OrderInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderInteractorTests.swift; sourceTree = "<group>"; };
@@ -342,7 +342,8 @@
 			children = (
 				0E4E61FA27241AA000E11DDC /* Loadable+Equatable.swift */,
 				0E201D602729E6AF0093DFF7 /* Pushable+Equatable.swift */,
-				0E3609C32740798F00A62EFD /* TokenState+Equatable.swift */,
+				0E3609C32740798F00A62EFD /* Movable+Equatable.swift */,
+				0E98632B27480972003FBFDE /* TokenState+Equatable.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -391,7 +392,6 @@
 				0E8B136026FA53CE006D36D5 /* AppState.swift */,
 				0EFDA36F272F336500FDA504 /* Configuration.swift */,
 				0E8B137726FA5BAA006D36D5 /* GlobalObjects.swift */,
-				0ECBDACB271DF046007C9693 /* UserData.swift */,
 			);
 			path = environment;
 			sourceTree = "<group>";
@@ -571,7 +571,6 @@
 				0E3609A2273FDB1B00A62EFD /* Client.swift in Sources */,
 				0EC797D727333796006C45F8 /* RepositoryPaths.swift in Sources */,
 				0E8B136726FA554E006D36D5 /* OrdersInteractor.swift in Sources */,
-				0ECBDACC271DF046007C9693 /* UserData.swift in Sources */,
 				0E3DB22B2736883700D10569 /* EndpointConfiguration.swift in Sources */,
 				0E4E61FD272420F500E11DDC /* MenuProvider.swift in Sources */,
 				0E44073D272347C700632B5F /* MenuState.swift in Sources */,
@@ -610,12 +609,13 @@
 				0E4E61FB27241AA000E11DDC /* Loadable+Equatable.swift in Sources */,
 				0E9A40A32741324800B5FF27 /* ProfileInteractorTest.swift in Sources */,
 				0E32179D2746C4EC00CFD752 /* TokenRepositoryStub.swift in Sources */,
+				0E98632C27480972003FBFDE /* TokenState+Equatable.swift in Sources */,
 				0EF0C4EB272B1C3D004092CF /* OrderInteractorTests.swift in Sources */,
 				0E44074E2723538200632B5F /* ProductsRepositoryStub.swift in Sources */,
 				0E9A40A1274131D400B5FF27 /* AccountRepositoryStub.swift in Sources */,
 				0E3609AA27401B2000A62EFD /* TokenStorageTest.swift in Sources */,
 				0E3609BE27404B8700A62EFD /* ProfileStorageTest.swift in Sources */,
-				0E3609C42740798F00A62EFD /* TokenState+Equatable.swift in Sources */,
+				0E3609C42740798F00A62EFD /* Movable+Equatable.swift in Sources */,
 				0E9A409F27412B9C00B5FF27 /* ProfileRepositoryStub.swift in Sources */,
 				0EF0C4F1272B3272004092CF /* AppStateTest.swift in Sources */,
 				0E201D612729E6AF0093DFF7 /* Pushable+Equatable.swift in Sources */,

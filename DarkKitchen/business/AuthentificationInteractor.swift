@@ -19,6 +19,7 @@ class AuthentificationInteractor: TokenReader, Authentication {
 
     func readToken(to state: Binding<TokenState>) {
         tokenRepository.getToken()
+            .print()
             .map { token in
                 return TokenState.exist(token: token)
             }

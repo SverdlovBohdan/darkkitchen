@@ -22,12 +22,12 @@ class MenuInteractor: CombineInteractor, MenuProvider {
 
 extension MenuProvider where Self: CombineInteractor, Self.Repository == ProductsRepository {
     func getFullMenu(appStateHolder appState: Binding<AppState>) {
-        appState.userData.fullMenuState.wrappedValue = .loading
-        appState.userData.categoriesState.wrappedValue = .loading
+        appState.fullMenuState.wrappedValue = .loading
+        appState.categoriesState.wrappedValue = .loading
 
         repository.getCategories()
             .flatMap { categories -> AnyPublisher<[Products], Error> in
-                appState.userData.categoriesState.wrappedValue = CategoriesState.loaded(categories)
+                appState.categoriesState.wrappedValue = CategoriesState.loaded(categories)
 
                 return Publishers.MergeMany<AnyPublisher<Products, Error>>(categories.compactMap{ category -> AnyPublisher<Products, Error> in
                     return self.repository.getProducts(for: category.id)
@@ -44,9 +44,9 @@ extension MenuProvider where Self: CombineInteractor, Self.Repository == Product
             .receive(on: RunLoop.main)
             .sink { state in
                 if case MenuState.failed(let error) = state {
-                    appState.userData.categoriesState.wrappedValue = CategoriesState.failed(error)
+                    appState.categoriesState.wrappedValue = CategoriesState.failed(error)
                 }
-                appState.userData.fullMenuState.wrappedValue = state
+                appState.fullMenuState.wrappedValue = state
             }
             .store(in: &cancellable)
     }

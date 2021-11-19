@@ -25,6 +25,7 @@ class ProfileInteractor: ProfileProvider {
         state.wrappedValue = ProfileState.processing
 
         profileRepository.loadProfile()
+            .print()
             .tryCatch { error in
                 return self.accountRepository.getAccountInfo()
                     .flatMap { user in
