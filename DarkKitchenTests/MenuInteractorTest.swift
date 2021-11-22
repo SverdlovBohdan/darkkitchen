@@ -25,19 +25,20 @@ class MenuInteractorTest: XCTestCase {
     var menuItems: Products {
         categories.compactMap { category in
             return Product(name: "", price: 0, description: "",
-                        category: category, main_image: .init(url: ""))
+                           category: category, main_image: .init(url: ""))
         }
     }
 
     func configure(categories: AnyPublisher<ProductCategories, Error>,
                    products: AnyPublisher<Products, Error>,
-                   setStateHandler: @escaping (AppState) -> Void) {
+                   setStateHandler: @escaping (MenuState) -> Void) {
         menuRepository.getCategoriesPublisher = categories
         menuRepository.getProductsPublisher = products
 
         menu = MenuInteractor(menuRepository: menuRepository)
-        menu.getFullMenu(appStateHolder: .init(get: {
-            return self.appState
+        menu.getFullMenu(categoriesStateHolder: .constant(appState.categoriesState)
+                         , menuStateHolder:.init(get: {
+            return self.appState.fullMenuState
         }, set: setStateHandler))
     }
 
@@ -60,15 +61,15 @@ class MenuInteractorTest: XCTestCase {
                     .setFailureType(to: Error.self)
                     .eraseToAnyPublisher(),
                   setStateHandler: { state in
-            switch state.fullMenuState {
+            switch state {
             case .loaded(_):
-                print("\(state.fullMenuState)")
+                print("\(state)")
                 self.expectation.fulfill()
             default:
-                print("\(state.fullMenuState)")
+                print("\(state)")
             }
 
-            self.appState = state
+            self.appState.fullMenuState = state
         })
 
         wait(for: [expectation], timeout: 3.0)
@@ -84,15 +85,15 @@ class MenuInteractorTest: XCTestCase {
                     .setFailureType(to: Error.self)
                     .eraseToAnyPublisher(),
                   setStateHandler: { state in
-            switch state.fullMenuState {
+            switch state {
             case .failed(_):
-                print("\(state.fullMenuState)")
+                print("\(state)")
                 self.expectation.fulfill()
             default:
-                print("\(state.fullMenuState)")
+                print("\(state)")
             }
 
-            self.appState = state
+            self.appState.fullMenuState = state
         })
 
         wait(for: [expectation], timeout: 3.0)
@@ -106,15 +107,15 @@ class MenuInteractorTest: XCTestCase {
                   products: Fail(error: NetworkError.unknown)
                     .eraseToAnyPublisher(),
                   setStateHandler: { state in
-            switch state.fullMenuState {
+            switch state {
             case .failed(_):
-                print("\(state.fullMenuState)")
+                print("\(state)")
                 self.expectation.fulfill()
             default:
-                print("\(state.fullMenuState)")
+                print("\(state)")
             }
 
-            self.appState = state
+            self.appState.fullMenuState = state
         })
 
         wait(for: [expectation], timeout: 3.0)

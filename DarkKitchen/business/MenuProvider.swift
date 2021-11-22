@@ -9,5 +9,6 @@ import Foundation
 import SwiftUI
 
 protocol MenuProvider {
-    func getFullMenu(appStateHolder appState: Binding<AppState>)
+    func getFullMenu(categoriesStateHolder categoriesState: Binding<CategoriesState>,
+                     menuStateHolder productsState: Binding<MenuState>)
 }

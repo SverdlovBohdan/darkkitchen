@@ -9,16 +9,17 @@ import SwiftUI
 
 @main
 struct DarkKitchenApp: App {
-    static var globals: GlobalObjectsContainer = {
-        GlobalObjectsContainer.development.tokenRepository.setToken("1234")
-        return GlobalObjectsContainer.development
+    var appState: AppState = {
+        let appState = AppState()
+        GlobalObjectsContainer.injectDevelopmentEnvironment(appState: appState)
+        InjectedValues[\.tokenRepository].setToken("test token")
+        return appState
     }()
 
     var body: some Scene {
         WindowGroup {
             MainView()
-                .environmentObject(DarkKitchenApp.globals.appState)
-                .environment(\.globalObjects, DarkKitchenApp.globals)
+                .environmentObject(appState)
         }
     }
 }

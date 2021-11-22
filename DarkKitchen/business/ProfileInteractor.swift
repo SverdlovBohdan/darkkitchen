@@ -32,6 +32,7 @@ class ProfileInteractor: ProfileProvider {
                         return self.profileRepository.saveProfile(for: user)
                     }
             }
+            .print()
             .map { user in
                 ProfileState.loaded(.init(user: user))
             }
