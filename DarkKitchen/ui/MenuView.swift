@@ -7,59 +7,9 @@
 
 import SwiftUI
 
-struct RoundedCornersShape: Shape {
-    let corners: UIRectCorner
-    let radius: CGFloat
-
-    func path(in rect: CGRect) -> Path {
-        let path = UIBezierPath(roundedRect: rect,
-                                byRoundingCorners: corners,
-                                cornerRadii: CGSize(width: radius, height: radius))
-        return Path(path.cgPath)
-    }
-}
-
-//private struct ProductPreviewView: View {
-//    var category: ProductCategory
-//    var isBorderNeeded: Bool
-//
-//    var body: some View {
-//        Text(category.name)
-//            .frame(minWidth: 0, maxWidth: .infinity)
-//            .background(RoundedCornersShape(corners: [.topLeft], radius: 15)
-//                            .stroke(Color("MainBlue"), lineWidth: 1))
-//    }
-//}
-
-//private struct CategoryView {
-//    private let categories: ProductCategories
-//    private var columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 0),
-//                                            count: 2)
-//
-//    init(categories: ProductCategories) {
-//        self.categories = categories
-//    }
-//
-//    var body: some View {
-//        ZStack {
-//            Color("MainPink")
-//                .ignoresSafeArea()
-//
-//            ScrollView {
-//                LazyVGrid(columns: columns) {
-//                    ForEach((0...20), id: \.self) { _ in
-//                        ProductPreviewView(category: ProductCategory(id: 1, name: "category1"),
-//                                           isBorderNeeded: true)
-//                    }
-//                }
-//            }
-//        }
-//    }
-//}
-
-struct MenuRow: View {
-    var category: ProductCategory
-    var isLeftShifted: Bool
+private struct MenuRow: View {
+    let category: ProductCategory
+    let isLeftShifted: Bool
 
     var body: some View {
         HStack {
@@ -68,7 +18,7 @@ struct MenuRow: View {
             }
 
             NavigationLink {
-                Text("Блюда для категории")
+                ProductsView(category: category)
             } label: {
                 Text(category.name)
                     .font(.system(size: 50, weight: .bold, design: .default))
@@ -105,9 +55,10 @@ struct MenuView: View {
             } else {
                 ScrollView {
                     ForEach((0..<categories.count), id: \.self) { idx in
-                            MenuRow(category: categories[idx],
-                                        isLeftShifted: getRingIndex(idx: idx, total: 6) < 3)
+                        MenuRow(category: categories[idx],
+                                isLeftShifted: getRingIndex(idx: idx, total: 6) < 3)
                     }
+                    .accentColor(.black)
                     .padding()
                 }
             }

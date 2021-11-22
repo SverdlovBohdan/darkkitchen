@@ -67,6 +67,8 @@
 		0E9A409F27412B9C00B5FF27 /* ProfileRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9A409E27412B9C00B5FF27 /* ProfileRepositoryStub.swift */; };
 		0E9A40A1274131D400B5FF27 /* AccountRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9A40A0274131D400B5FF27 /* AccountRepositoryStub.swift */; };
 		0E9A40A32741324800B5FF27 /* ProfileInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9A40A22741324700B5FF27 /* ProfileInteractorTest.swift */; };
+		0EA23188274C298400B6FB27 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA23187274C298400B6FB27 /* ProductsView.swift */; };
+		0EA2318A274C29B200B6FB27 /* RoundedCornersShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA23189274C29B200B6FB27 /* RoundedCornersShape.swift */; };
 		0EA84BFD2739C044001E8B33 /* UrlResponderMock.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA84BFC2739C044001E8B33 /* UrlResponderMock.swift.swift */; };
 		0EA84BFF2739C375001E8B33 /* ProductsStorageRestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA84BFE2739C375001E8B33 /* ProductsStorageRestTest.swift */; };
 		0EC797D727333796006C45F8 /* RepositoryPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC797D627333796006C45F8 /* RepositoryPaths.swift */; };
@@ -168,6 +170,8 @@
 		0E9A409E27412B9C00B5FF27 /* ProfileRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepositoryStub.swift; sourceTree = "<group>"; };
 		0E9A40A0274131D400B5FF27 /* AccountRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepositoryStub.swift; sourceTree = "<group>"; };
 		0E9A40A22741324700B5FF27 /* ProfileInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractorTest.swift; sourceTree = "<group>"; };
+		0EA23187274C298400B6FB27 /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
+		0EA23189274C29B200B6FB27 /* RoundedCornersShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersShape.swift; sourceTree = "<group>"; };
 		0EA84BFC2739C044001E8B33 /* UrlResponderMock.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlResponderMock.swift.swift; sourceTree = "<group>"; };
 		0EA84BFE2739C375001E8B33 /* ProductsStorageRestTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsStorageRestTest.swift; sourceTree = "<group>"; };
 		0EC797D627333796006C45F8 /* RepositoryPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryPaths.swift; sourceTree = "<group>"; };
@@ -279,6 +283,8 @@
 			children = (
 				0E3B540826F7A4E300DE526C /* MainView.swift */,
 				0E9863322748600A003FBFDE /* MenuView.swift */,
+				0EA23187274C298400B6FB27 /* ProductsView.swift */,
+				0EA23189274C29B200B6FB27 /* RoundedCornersShape.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -573,6 +579,7 @@
 				0EFDA370272F336500FDA504 /* Configuration.swift in Sources */,
 				0E8B135B26FA4E53006D36D5 /* Profile.swift in Sources */,
 				0E8B136126FA53CE006D36D5 /* AppState.swift in Sources */,
+				0EA23188274C298400B6FB27 /* ProductsView.swift in Sources */,
 				0E8B135D26FA4E62006D36D5 /* Product.swift in Sources */,
 				0E8B135726FA4E34006D36D5 /* Cart.swift in Sources */,
 				0E3609A62740171B00A62EFD /* TokenRepository.swift in Sources */,
@@ -582,6 +589,7 @@
 				0EC797D727333796006C45F8 /* RepositoryPaths.swift in Sources */,
 				0E8B136726FA554E006D36D5 /* OrdersInteractor.swift in Sources */,
 				0E3DB22B2736883700D10569 /* EndpointConfiguration.swift in Sources */,
+				0EA2318A274C29B200B6FB27 /* RoundedCornersShape.swift in Sources */,
 				0E4E61FD272420F500E11DDC /* MenuProvider.swift in Sources */,
 				0E44073D272347C700632B5F /* MenuState.swift in Sources */,
 				0E8B136926FA560F006D36D5 /* ProductsRepository.swift in Sources */,

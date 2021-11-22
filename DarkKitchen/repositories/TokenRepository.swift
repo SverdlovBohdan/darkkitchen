@@ -9,6 +9,9 @@ import Foundation
 import Combine
 
 protocol TokenRepository {
+    @discardableResult
     func getToken() -> AnyPublisher<String, Error>
+
+    @discardableResult
     func setToken(_ token: String) -> AnyPublisher<String, Error>
 }

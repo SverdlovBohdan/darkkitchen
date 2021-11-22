@@ -46,10 +46,13 @@ struct MainView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Text(selectedTab)
                         .font(.system(size: 45, weight: .bold, design: .default))
+                        .foregroundColor(Color("MainBlue"))
                 }
             }
             .onAppear {
-                tokenReader.readToken(to: $appState.tokenState)
+                if !appState.tokenState.isTokenExist {
+                    tokenReader.readToken(to: $appState.tokenState)
+                }
             }
         }
         .accentColor(Color("MainBlue"))

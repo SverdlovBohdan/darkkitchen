@@ -190,9 +190,12 @@ enum GlobalObjectsContainer {
         network.productsCategoriesPublisher = Just(productCategories)
             .setFailureType(to: Error.self)
             .eraseToAnyPublisher()
-        let products = [Product(name: "test1", price: 13, description: "des", category: productCategories[0], main_image: .init(url: "http://")),
-                        Product(name: "test2", price: 14, description: "des", category: productCategories[1], main_image: .init(url: "http://")),
-                        Product(name: "test3", price: 13, description: "des", category: productCategories[2], main_image: .init(url: "http://"))]
+        let products = [Product(name: "test1", price: 13, description: "des", category: productCategories[0],
+                                main_image: .init(url: "https://isparta.github.io/compare-webp/image/gif_webp/webp/2.webp")),
+                        Product(name: "test2", price: 14, description: "des", category: productCategories[1],
+                                main_image: .init(url: "https://vilki-palki.od.ua/storage/img/f8/6e/1622554919%D0%91%D0%BE%D1%83%D0%BB%D1%81%D0%BA%D1%80%D0%B5%D0%B2%D0%B5%D1%82%D0%BA%D0%B0%D0%BC%D0%B8.png")),
+                        Product(name: "test3", price: 13, description: "des", category: productCategories[2],
+                                main_image: .init(url: "https://vilki-palki.od.ua/storage/img/f8/6e/1622554919Боулскреветками.png"))]
         network.productsPublisher = Just(products)
             .setFailureType(to: Error.self)
             .eraseToAnyPublisher()

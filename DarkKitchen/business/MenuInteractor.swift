@@ -27,6 +27,7 @@ extension MenuProvider where Self: CombineInteractor, Self.Repository == Product
         categoriesState.wrappedValue = .loading
 
         repository.getCategories()
+            .print()
             .flatMap { categories -> AnyPublisher<[Products], Error> in
                 categoriesState.wrappedValue = CategoriesState.loaded(categories)
 
@@ -36,6 +37,7 @@ extension MenuProvider where Self: CombineInteractor, Self.Repository == Product
                     .collect()
                     .eraseToAnyPublisher()
             }
+            .print()
             .map { products in
                 return MenuState.loaded(Array(products.joined()))
             }
