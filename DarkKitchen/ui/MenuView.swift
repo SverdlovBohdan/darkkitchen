@@ -57,11 +57,42 @@ struct RoundedCornersShape: Shape {
 //    }
 //}
 
+struct MenuRow: View {
+    var category: ProductCategory
+    var isLeftShifted: Bool
+
+    var body: some View {
+        HStack {
+            if !isLeftShifted {
+                Spacer()
+            }
+
+            NavigationLink {
+                Text("Блюда для категории")
+            } label: {
+                Text(category.name)
+                    .font(.system(size: 50, weight: .bold, design: .default))
+            }
+
+            if isLeftShifted {
+                Spacer()
+            }
+        }
+    }
+}
+
 struct MenuView: View {
     private let categories: ProductCategories
+    private let error: String?
 
     init(categories: ProductCategories) {
         self.categories = categories
+        self.error = nil
+    }
+
+    init(error: String) {
+        self.categories = .init()
+        self.error = error
     }
 
     var body: some View {
@@ -69,33 +100,16 @@ struct MenuView: View {
             Color("MainPink")
                 .ignoresSafeArea()
 
-            ScrollView {
-                ForEach((0..<categories.count), id: \.self) { idx in
-                    if getRingIndex(idx: idx, total: 6) < 3 {
-                        HStack {
-                            NavigationLink {
-                                Text("Detail")
-                            } label: {
-                                Text(categories[idx].name)
-                                    .font(.system(size: 50, weight: .bold, design: .default))
-                            }
-
-                            Spacer()
-                        }
-                    } else {
-                        HStack {
-                            Spacer()
-
-                            NavigationLink {
-                                Text("Detail")
-                            } label: {
-                                Text(categories[idx].name)
-                                    .font(.system(size: 50, weight: .bold, design: .default))
-                            }
-                        }
+            if let error = error {
+                Text(error)
+            } else {
+                ScrollView {
+                    ForEach((0..<categories.count), id: \.self) { idx in
+                            MenuRow(category: categories[idx],
+                                        isLeftShifted: getRingIndex(idx: idx, total: 6) < 3)
                     }
+                    .padding()
                 }
-                .padding()
             }
         }
     }

@@ -28,4 +28,40 @@ extension Loadable: CustomStringConvertible {
             return "failed"
         }
     }
+
+    var isIdle: Bool {
+        switch self {
+        case .idle:
+            return true
+        default:
+            return false
+        }
+    }
+
+    var isLoading: Bool {
+        switch self {
+        case .loading:
+            return true
+        default:
+            return false
+        }
+    }
+
+    var resource: Resource? {
+        switch self {
+        case .loaded(let resource):
+            return resource
+        default:
+            return nil
+        }
+    }
+
+    var error: String? {
+        switch self {
+        case .failed(_):
+            return "Опаньки. Произошла ошибка"
+        default:
+            return nil
+        }
+    }
 }

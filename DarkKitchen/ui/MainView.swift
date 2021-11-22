@@ -18,7 +18,7 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             TabView(selection: $selectedTab) {
-                MenuView(categories: .init())
+                makeMenuView()
                     .tabItem {
                         Image(systemName: "menucard")
                         Text("Меню")
@@ -50,8 +50,6 @@ struct MainView: View {
             }
             .onAppear {
                 tokenReader.readToken(to: $appState.tokenState)
-                menuProvider.getFullMenu(categoriesStateHolder: $appState.categoriesState,
-                                         menuStateHolder: $appState.fullMenuState)
             }
         }
         .accentColor(Color("MainBlue"))
@@ -72,6 +70,24 @@ private extension MainView {
             Image(systemName: "person.crop.circle.fill.badge.checkmark")
         } else {
             Image(systemName: "person.crop.circle.badge.exclamationmark.fill")
+        }
+    }
+
+    @ViewBuilder func makeMenuView() -> some View {
+        if appState.categoriesState.isIdle {
+            ProgressView()
+                .onAppear {
+                    menuProvider.getFullMenu(categoriesStateHolder: $appState.categoriesState,
+                                             menuStateHolder: $appState.fullMenuState)
+                }
+        } else if appState.categoriesState.isLoading {
+            ProgressView()
+        } else if let categories = appState.categoriesState.resource {
+            MenuView(categories: categories)
+        } else if let error = appState.categoriesState.error {
+            MenuView(error: error)
+        } else {
+            MenuView(error: "Вы не должны видеть это. Произошла ошибка программиста")
         }
     }
 }
