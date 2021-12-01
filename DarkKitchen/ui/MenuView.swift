@@ -21,7 +21,7 @@ private struct MenuRow: View {
                 ProductsView(category: category)
             } label: {
                 Text(category.name)
-                    .font(.system(size: 50, weight: .bold, design: .default))
+                    .font(.system(size: 65, weight: .bold, design: .default))
             }
 
             if isLeftShifted {
@@ -53,7 +53,7 @@ struct MenuView: View {
             if let error = error {
                 Text(error)
             } else {
-                ScrollView {
+                ScrollView(showsIndicators: false) {
                     ForEach((0..<categories.count), id: \.self) { idx in
                         MenuRow(category: categories[idx],
                                 isLeftShifted: getRingIndex(idx: idx, total: 6) < 3)

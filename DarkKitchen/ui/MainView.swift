@@ -37,6 +37,7 @@ struct MainView: View {
                     }
                     .tag("История")
             }
+            .navigationTitle(selectedTab)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {}) {
@@ -44,8 +45,8 @@ struct MainView: View {
                     }
                 }
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Text(selectedTab)
-                        .font(.system(size: 45, weight: .bold, design: .default))
+                    Text("Вилки-Палки")
+                        .font(.system(size: 35, weight: .bold, design: .default))
                         .foregroundColor(Color("MainBlue"))
                 }
             }

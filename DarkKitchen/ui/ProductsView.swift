@@ -10,7 +10,7 @@ import SDWebImageSwiftUI
 
 struct ProductsView: View {
     @EnvironmentObject var appState: AppState
-    private let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 0),
+    private let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 2),
                                             count: 2)
 
     let category: ProductCategory
@@ -44,28 +44,46 @@ private extension ProductsView {
 private struct ProductPreviewView: View {
     var product: Product
     var isBorderNeeded: Bool
-    var corners: UIRectCorner = []
 
+    @ViewBuilder
     var body: some View {
-        VStack {
-            WebImage(url: URL(string: product.main_image.url), isAnimating: .constant(true))
-                .resizable()
-//                 .placeholder {
-//                     Image(systemName: "photo")
-//                 }
-                .indicator(.activity)
-                .transition(.fade(duration: 0.5))
-                .scaledToFit()
+        if isBorderNeeded {
+            ZStack {
+                RoundedRectangle(cornerRadius: 5.0)
+                    .foregroundColor(Color("MainPink"))
+                    .shadow(radius: 7)
 
-            Text("\(product.price)₴")
-                .font(.title)
-                .bold()
-            Text(product.name)
-                .font(.subheadline)
+                VStack {
+                    WebImage(url: URL(string: product.main_image.url), isAnimating: .constant(true))
+                        .resizable()
+                        .indicator(.activity)
+                        .transition(.fade(duration: 0.5))
+                        .scaledToFit()
+
+                    Text("\(product.price)₴")
+                        .font(.title)
+                        .bold()
+                    Text(product.name)
+                        .font(.subheadline)
+                }
+                .padding()
+            }
+        } else {
+            VStack {
+                WebImage(url: URL(string: product.main_image.url), isAnimating: .constant(true))
+                    .resizable()
+                    .indicator(.activity)
+                    .transition(.fade(duration: 0.5))
+                    .scaledToFit()
+
+                Text("\(product.price)₴")
+                    .font(.title)
+                    .bold()
+                Text(product.name)
+                    .font(.subheadline)
+            }
+            .padding()
         }
-        .padding()
-        .background(RoundedCornersShape(corners: corners, radius: 30)
-                        .stroke(Color("MainBlue"), lineWidth: 1))
     }
 }
 
@@ -75,33 +93,24 @@ private struct ProductsContentView: View {
     let columns: [GridItem]
 
     var body: some View {
-        ScrollView {
-            HStack {
-                Text(title)
-                    .font(.system(size: 45, weight: .bold, design: .default))
-
-                Spacer()
-            }
-            .frame(minWidth: 0, maxWidth: .infinity)
-
-            LazyVGrid(columns: columns, spacing: 0) {
+        ScrollView(showsIndicators: false) {
+            LazyVGrid(columns: columns, spacing: 2) {
                 ForEach((0..<products.count), id: \.self) { idx in
-                    if idx == 0 {
+                    if idx == 0 || idx == 3 {
                         ProductPreviewView(product: products[idx],
-                                           isBorderNeeded: false,
-                                           corners: [.topLeft])
+                                           isBorderNeeded: false)
                     } else if idx == 1 {
                         ProductPreviewView(product: products[idx],
-                                           isBorderNeeded: true,
-                                           corners: [.topRight])
+                                           isBorderNeeded: true)
                     } else {
                         ProductPreviewView(product: products[idx],
-                                           isBorderNeeded: Int.random(in: 0..<100) < 33)
+                                           isBorderNeeded: true)
                     }
                 }
             }
+            .padding()
         }
-        .padding(.horizontal)
+        .navigationTitle(Text(title))
     }
 }
 
