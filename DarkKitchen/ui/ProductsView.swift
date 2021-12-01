@@ -10,7 +10,7 @@ import SDWebImageSwiftUI
 
 struct ProductsView: View {
     @EnvironmentObject var appState: AppState
-    private let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 2),
+    private let columns: [GridItem] = Array(repeating: .init(.flexible(), spacing: 3),
                                             count: 2)
 
     let category: ProductCategory
@@ -49,9 +49,12 @@ private struct ProductPreviewView: View {
     var body: some View {
         if isBorderNeeded {
             ZStack {
-                RoundedRectangle(cornerRadius: 5.0)
+                RoundedRectangle(cornerRadius: 15.0)
                     .foregroundColor(Color("MainPink"))
                     .shadow(radius: 7)
+
+                RoundedRectangle(cornerRadius: 15.0)
+                    .stroke(.white, lineWidth: 1)
 
                 VStack {
                     WebImage(url: URL(string: product.main_image.url), isAnimating: .constant(true))
@@ -94,7 +97,7 @@ private struct ProductsContentView: View {
 
     var body: some View {
         ScrollView(showsIndicators: false) {
-            LazyVGrid(columns: columns, spacing: 2) {
+            LazyVGrid(columns: columns, spacing: 3) {
                 ForEach((0..<products.count), id: \.self) { idx in
                     if idx == 0 || idx == 3 {
                         ProductPreviewView(product: products[idx],
